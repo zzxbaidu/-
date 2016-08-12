@@ -15,6 +15,7 @@ class LLTabBarController: UITabBarController {
 
         // Do any additional setup after loading the view.
         addChildViewControllers()
+        tabBar.tintColor = UIColor.redColor()
     }
 
     override func didReceiveMemoryWarning() {
@@ -40,6 +41,7 @@ class LLTabBarController: UITabBarController {
         childController.title = title as String
         childController.tabBarItem.image = UIImage(named: imageName as String)
                childController.tabBarItem.selectedImage = UIImage(named: (imageName as String) + "selected")
+        
         
         let navVc  = LLBaseNavController(rootViewController: childController)
         addChildViewController(navVc)

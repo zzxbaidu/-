@@ -12,7 +12,6 @@ pod "SVProgressHUD"
 pod "Alamofire"
 pod "MJRefresh"
 pod "SDWebImage"
-
-
+pod "SDCycleScrollView"
 
 end

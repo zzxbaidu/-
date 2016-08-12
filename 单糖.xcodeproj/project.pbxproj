@@ -7,6 +7,10 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		06102AA61D5DB38400D2BBF2 /* LLComment.swift in Sources */ = {isa = PBXBuildFile; fileRef = 06102AA51D5DB38400D2BBF2 /* LLComment.swift */; };
+		06102AA81D5DB53600D2BBF2 /* LLChildrenController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 06102AA71D5DB53600D2BBF2 /* LLChildrenController.swift */; };
+		06102AAA1D5DB87800D2BBF2 /* UIView+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 06102AA91D5DB87800D2BBF2 /* UIView+Extension.swift */; };
+		06102AAC1D5DC18200D2BBF2 /* LLNetWorkTools.swift in Sources */ = {isa = PBXBuildFile; fileRef = 06102AAB1D5DC18200D2BBF2 /* LLNetWorkTools.swift */; };
 		06D1E4891D5C167700CEBEED /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 06D1E4881D5C167700CEBEED /* AppDelegate.swift */; };
 		06D1E4901D5C167700CEBEED /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 06D1E48F1D5C167700CEBEED /* Assets.xcassets */; };
 		06D1E49E1D5C167700CEBEED /* __Tests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 06D1E49D1D5C167700CEBEED /* __Tests.swift */; };
@@ -19,6 +23,7 @@
 		06D1E4D51D5C1D7300CEBEED /* LLBaseNavController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 06D1E4D41D5C1D7300CEBEED /* LLBaseNavController.swift */; };
 		06D1E4D71D5C1D8900CEBEED /* LLTabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 06D1E4D61D5C1D8900CEBEED /* LLTabBarController.swift */; };
 		06D1E4D91D5C21C600CEBEED /* LLCustermNavView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 06D1E4D81D5C21C600CEBEED /* LLCustermNavView.swift */; };
+		06DCADCD1D5DD0BA0073F0B3 /* LLTitleModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 06DCADCC1D5DD0BA0073F0B3 /* LLTitleModel.swift */; };
 		1D0F3A7218CBDCF030241009 /* Pods___.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DDFD9106D65BAB806BFBE924 /* Pods___.framework */; };
 /* End PBXBuildFile section */
 
@@ -40,6 +45,10 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		06102AA51D5DB38400D2BBF2 /* LLComment.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LLComment.swift; sourceTree = "<group>"; };
+		06102AA71D5DB53600D2BBF2 /* LLChildrenController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LLChildrenController.swift; sourceTree = "<group>"; };
+		06102AA91D5DB87800D2BBF2 /* UIView+Extension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIView+Extension.swift"; sourceTree = "<group>"; };
+		06102AAB1D5DC18200D2BBF2 /* LLNetWorkTools.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LLNetWorkTools.swift; sourceTree = "<group>"; };
 		06D1E4851D5C167700CEBEED /* 单糖.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "单糖.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		06D1E4881D5C167700CEBEED /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		06D1E48F1D5C167700CEBEED /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -58,6 +67,7 @@
 		06D1E4D41D5C1D7300CEBEED /* LLBaseNavController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LLBaseNavController.swift; sourceTree = "<group>"; };
 		06D1E4D61D5C1D8900CEBEED /* LLTabBarController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LLTabBarController.swift; sourceTree = "<group>"; };
 		06D1E4D81D5C21C600CEBEED /* LLCustermNavView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LLCustermNavView.swift; sourceTree = "<group>"; };
+		06DCADCC1D5DD0BA0073F0B3 /* LLTitleModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LLTitleModel.swift; sourceTree = "<group>"; };
 		3D4D22BD952DBA77680D9363 /* Pods-单糖.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-单糖.debug.xcconfig"; path = "Pods/Target Support Files/Pods-单糖/Pods-单糖.debug.xcconfig"; sourceTree = "<group>"; };
 		DDFD9106D65BAB806BFBE924 /* Pods___.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = "Pods___.framework"; sourceTree = BUILT_PRODUCTS_DIR; };
 		F3A9D042FD99B9920B274333 /* Pods-单糖.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-单糖.release.xcconfig"; path = "Pods/Target Support Files/Pods-单糖/Pods-单糖.release.xcconfig"; sourceTree = "<group>"; };
@@ -89,6 +99,13 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		06102AA41D5DADA300D2BBF2 /* 代码的重构 */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = "代码的重构";
+			sourceTree = "<group>";
+		};
 		06D1E47C1D5C167700CEBEED = {
 			isa = PBXGroup;
 			children = (
@@ -230,6 +247,7 @@
 			isa = PBXGroup;
 			children = (
 				06D1E4CC1D5C1D0300CEBEED /* LLHomeController.swift */,
+				06102AA71D5DB53600D2BBF2 /* LLChildrenController.swift */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -237,6 +255,7 @@
 		06D1E4C11D5C1A3800CEBEED /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				06DCADCC1D5DD0BA0073F0B3 /* LLTitleModel.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -291,6 +310,7 @@
 		06D1E4C81D5C1C9F00CEBEED /* 分类 */ = {
 			isa = PBXGroup;
 			children = (
+				06102AA91D5DB87800D2BBF2 /* UIView+Extension.swift */,
 				06D1E4C91D5C1CB800CEBEED /* base */,
 			);
 			path = "分类";
@@ -299,10 +319,13 @@
 		06D1E4C91D5C1CB800CEBEED /* base */ = {
 			isa = PBXGroup;
 			children = (
+				06102AA41D5DADA300D2BBF2 /* 代码的重构 */,
 				06D1E4CA1D5C1CD100CEBEED /* LLBaseController.swift */,
 				06D1E4D41D5C1D7300CEBEED /* LLBaseNavController.swift */,
 				06D1E4D61D5C1D8900CEBEED /* LLTabBarController.swift */,
 				06D1E4D81D5C21C600CEBEED /* LLCustermNavView.swift */,
+				06102AA51D5DB38400D2BBF2 /* LLComment.swift */,
+				06102AAB1D5DC18200D2BBF2 /* LLNetWorkTools.swift */,
 			);
 			path = base;
 			sourceTree = "<group>";
@@ -505,13 +528,18 @@
 			buildActionMask = 2147483647;
 			files = (
 				06D1E4D11D5C1D4200CEBEED /* LLClassController.swift in Sources */,
+				06102AA81D5DB53600D2BBF2 /* LLChildrenController.swift in Sources */,
 				06D1E4D31D5C1D5400CEBEED /* LLMeController.swift in Sources */,
 				06D1E4CF1D5C1D2E00CEBEED /* LLItemController.swift in Sources */,
 				06D1E4D71D5C1D8900CEBEED /* LLTabBarController.swift in Sources */,
 				06D1E4D51D5C1D7300CEBEED /* LLBaseNavController.swift in Sources */,
+				06102AAA1D5DB87800D2BBF2 /* UIView+Extension.swift in Sources */,
+				06102AA61D5DB38400D2BBF2 /* LLComment.swift in Sources */,
 				06D1E4CB1D5C1CD100CEBEED /* LLBaseController.swift in Sources */,
 				06D1E4CD1D5C1D0300CEBEED /* LLHomeController.swift in Sources */,
+				06DCADCD1D5DD0BA0073F0B3 /* LLTitleModel.swift in Sources */,
 				06D1E4891D5C167700CEBEED /* AppDelegate.swift in Sources */,
+				06102AAC1D5DC18200D2BBF2 /* LLNetWorkTools.swift in Sources */,
 				06D1E4D91D5C21C600CEBEED /* LLCustermNavView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
