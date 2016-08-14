@@ -8,6 +8,8 @@
 
 import UIKit
 import SVProgressHUD
+import SDCycleScrollView
+import SDWebImage
 
 class LLHomeController: LLBaseController {
 /// 设置可视的标题为3个
@@ -15,8 +17,8 @@ class LLHomeController: LLBaseController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
-        getHomeTitleDate()
+        automaticallyAdjustsScrollViewInsets = false
+        getCarouselImage()
         
       }
 
@@ -84,7 +86,7 @@ class LLHomeController: LLBaseController {
         titleScroll.contentSize = CGSizeMake(SCREEN_WITH / CGFloat (visualCount) *  CGFloat(titleArr.count), 0)
         
         //设置默认控制器
-        guard let fristChildVc = childViewControllers.first  else{
+        guard let fristChildVc = childViewControllers.first as?UITableViewController  else{
         return
         }
         
@@ -93,6 +95,20 @@ class LLHomeController: LLBaseController {
         contentScroll.addSubview(fristChildVc.view)
         
         
+        let imageArr = NSMutableArray(capacity: 1)
+        
+        for index in 0..<carouseArr.count {
+            
+            let model = carouseArr[index] as? LLCarouselModel
+            imageArr.addObject((model?.image_url)!)
+        }
+        
+        let  cycleView = SDCycleScrollView(frame: CGRect(x: 0,y: 0,width: SCREEN_WITH,height: 150), delegate: self, placeholderImage: UIImage(named: "Me_ProfileBackground"))
+        
+        cycleView.imageURLStringsGroup = imageArr as [AnyObject]
+        fristChildVc.tableView.tableHeaderView = cycleView
+
+        
         //添加指示器 取出第一个 UILable
         
          let fristLable = tempTitleArr[0] as!UILabel
@@ -100,6 +116,13 @@ class LLHomeController: LLBaseController {
         titleScroll.addSubview(indicatorView)
         
    
+    
+    }
+    
+     // MARK: ---- 添加轮播图的UI
+    private func setCarouselUI() {
+        
+        
     
     }
     
@@ -141,6 +164,40 @@ class LLHomeController: LLBaseController {
         }
     
     }
+     // MARK: ---- 获取轮播图数据
+    
+    private func getCarouselImage() {
+        
+     
+    
+        let urlString = baseUrl + "v1/banners?channel=iOS"
+        
+        LLNetWorkTools.sharedTools.loadGETDate(urlString, param: "") { (backDate) in
+            
+            let dateDict = backDate as?NSDictionary
+            
+            let arrDict = dateDict?.objectForKey("data") as?NSDictionary
+            
+            guard let arr = arrDict?.objectForKey("banners") as? NSArray else {
+               SVProgressHUD.showErrorWithStatus("加载轮播图失败")
+                return
+            
+            }
+            //字典转模型
+            for index in 0..<arr.count{
+                let tempArr = arr[index]
+                let model = LLCarouselModel(dict: tempArr as! [String : AnyObject])
+               self.carouseArr.addObject(model)
+            
+            
+            }
+            
+            self.getHomeTitleDate()
+        }
+    
+    
+    }
+    
     
           // MARK: ---- 切换按钮的点击方法
     
@@ -198,8 +255,8 @@ class LLHomeController: LLBaseController {
     //头部盛装UILable的数组
     
     private lazy var tempTitleArr:NSMutableArray = NSMutableArray(capacity: 1)
-    
-    
+    /// 轮播模型数组
+    private lazy var carouseArr:NSMutableArray = NSMutableArray(capacity: 1)
 
 
 }
@@ -275,6 +332,16 @@ extension LLHomeController :UIScrollViewDelegate{
             
             scrollView.setContentOffset(scrollView.contentOffset, animated: false)
         }
+    }
+
+}
+
+// MARK: - SDCycleScrollViewDelegate
+extension LLHomeController :SDCycleScrollViewDelegate{
+    
+    func cycleScrollView(cycleScrollView: SDCycleScrollView!, didSelectItemAtIndex index: Int) {
+        
+        
     }
 
 }

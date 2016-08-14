@@ -25,6 +25,7 @@
 		06D1E4D91D5C21C600CEBEED /* LLCustermNavView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 06D1E4D81D5C21C600CEBEED /* LLCustermNavView.swift */; };
 		06DCADCD1D5DD0BA0073F0B3 /* LLTitleModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 06DCADCC1D5DD0BA0073F0B3 /* LLTitleModel.swift */; };
 		1D0F3A7218CBDCF030241009 /* Pods___.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DDFD9106D65BAB806BFBE924 /* Pods___.framework */; };
+		B5E24FF21D60854800E30D5C /* LLCarouselModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5E24FF11D60854800E30D5C /* LLCarouselModel.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -70,6 +71,7 @@
 		06DCADCC1D5DD0BA0073F0B3 /* LLTitleModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LLTitleModel.swift; sourceTree = "<group>"; };
 		3D4D22BD952DBA77680D9363 /* Pods-单糖.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-单糖.debug.xcconfig"; path = "Pods/Target Support Files/Pods-单糖/Pods-单糖.debug.xcconfig"; sourceTree = "<group>"; };
 		B5E24FEA1D6077E600E30D5C /* 单糖-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "单糖-Bridging-Header.h"; sourceTree = "<group>"; };
+		B5E24FF11D60854800E30D5C /* LLCarouselModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LLCarouselModel.swift; sourceTree = "<group>"; };
 		DDFD9106D65BAB806BFBE924 /* Pods___.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = "Pods___.framework"; sourceTree = BUILT_PRODUCTS_DIR; };
 		F3A9D042FD99B9920B274333 /* Pods-单糖.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-单糖.release.xcconfig"; path = "Pods/Target Support Files/Pods-单糖/Pods-单糖.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -257,6 +259,7 @@
 			isa = PBXGroup;
 			children = (
 				06DCADCC1D5DD0BA0073F0B3 /* LLTitleModel.swift */,
+				B5E24FF11D60854800E30D5C /* LLCarouselModel.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -542,6 +545,7 @@
 				06DCADCD1D5DD0BA0073F0B3 /* LLTitleModel.swift in Sources */,
 				06D1E4891D5C167700CEBEED /* AppDelegate.swift in Sources */,
 				06102AAC1D5DC18200D2BBF2 /* LLNetWorkTools.swift in Sources */,
+				B5E24FF21D60854800E30D5C /* LLCarouselModel.swift in Sources */,
 				06D1E4D91D5C21C600CEBEED /* LLCustermNavView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

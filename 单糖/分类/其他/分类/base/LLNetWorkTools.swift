@@ -33,11 +33,7 @@ class LLNetWorkTools: NSObject {
         
         Alamofire.request(.GET, url!, parameters: param as? [String : AnyObject])
             .responseJSON { response in
-//                print(response.request)  // original URL request
-//                print(response.response) // URL response
-//                print(response.data)     // server data
-//                print(response.result)   // result of response serialization
-//                
+                
                 if let JSON = response.result.value {
                     
                     finished(backDate: JSON)
