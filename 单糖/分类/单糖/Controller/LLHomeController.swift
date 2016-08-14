@@ -10,12 +10,11 @@ import UIKit
 import SVProgressHUD
 
 class LLHomeController: LLBaseController {
-/// 设置可视的标题为5个
-    let visualCount = 5
+/// 设置可视的标题为3个
+    let visualCount = 4
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        setupUI()
         
         getHomeTitleDate()
         
@@ -31,25 +30,16 @@ class LLHomeController: LLBaseController {
     private func setupUI() {
         
         view.addSubview(titleScroll)
-        titleScroll.snp_makeConstraints { (make) in
-            make.left.right.equalTo(view)
-            make.top.equalTo(view).offset(64)
-            make.height.equalTo(44)
-        }
-        
         view.addSubview(contentScroll)
-        contentScroll.snp_makeConstraints { (make) in
-            make.left.right.equalTo(view)
-            make.top.equalTo(titleScroll.snp_bottom)
-            make.bottom.equalTo(view)
-        }
-        
+
         //循环添加子控制器
         
         for index in 0..<titleArr.count {
             
             let childVc = LLChildrenController()
-            childVc.title = titleArr[index] as? String
+            
+            let title = titleArr[index] as? LLTitleModel
+            childVc.title = title?.name
             addChildViewController(childVc)
             
             
@@ -60,13 +50,15 @@ class LLHomeController: LLBaseController {
         for index in 0..<titleArr.count {
             
             let lableW = SCREEN_WITH / CGFloat (visualCount)
-            let lableH = titleScroll.height
+            let lableH = CGFloat (44.0)
             let lableY =  0
             let lableX = CGFloat (index) * lableW
             
             let titleLable = UILabel(frame: CGRect(x: lableX, y: CGFloat (lableY), width: lableW, height: lableH))
             titleLable.tag = index
+            titleLable.text = childViewControllers[index].title
             titleScroll.addSubview(titleLable)
+            tempTitleArr.addObject(titleLable)
             titleLable.textAlignment = .Center
             titleLable.font = UIFont.systemFontOfSize(16)
             
@@ -97,13 +89,13 @@ class LLHomeController: LLBaseController {
         }
         
         fristChildVc.view.frame = contentScroll.bounds
-        fristChildVc.view.backgroundColor = UIColor.whiteColor()
+       
         contentScroll.addSubview(fristChildVc.view)
         
         
         //添加指示器 取出第一个 UILable
         
-         let fristLable = titleScroll.subviews[0]
+         let fristLable = tempTitleArr[0] as!UILabel
         indicatorView.frame = CGRect(x: fristLable.x, y: fristLable.y + fristLable.height - 2, width: fristLable.width, height: 2)
         titleScroll.addSubview(indicatorView)
         
@@ -142,15 +134,7 @@ class LLHomeController: LLBaseController {
             
             }
             
-            
-            for model in 0..<self.titleArr.count {
-                
-                
-          let m = self.titleArr[model] as!LLTitleModel
-            print( m.name)
-                
-            
-            }
+            self.setupUI()
 
             
         
@@ -178,24 +162,23 @@ class LLHomeController: LLBaseController {
 
     private lazy var titleScroll:UIScrollView = {
         
-        let titleScr = UIScrollView()
+        let titleScr = UIScrollView(frame: CGRect(x: 0, y: 64, width: SCREEN_WITH, height: 44))
         
         titleScr.showsVerticalScrollIndicator = false
         titleScr.showsHorizontalScrollIndicator = false
         
-        titleScr.backgroundColor = UIColor.orangeColor()
         return titleScr
     
     }()
      ///容器视图
     private lazy var contentScroll:UIScrollView = {
         
-        let contentScr = UIScrollView()
-        
-        contentScr.backgroundColor = UIColor.redColor()
-        contentScr.showsVerticalScrollIndicator = false
+        let contentScr = UIScrollView(frame: CGRect(x: 0, y: 108, width: SCREEN_WITH, height: SCREEN_HEIGHT - 108))
         contentScr.delegate = self
-        
+        contentScr.backgroundColor = UIColor.clearColor()
+        contentScr.pagingEnabled = false
+        contentScr.decelerationRate = 0.1
+        contentScr.bounces = false
         return contentScr
         
     }()
@@ -212,9 +195,9 @@ class LLHomeController: LLBaseController {
         
     }()
     
-    //头部标题模型数组
+    //头部盛装UILable的数组
     
-    
+    private lazy var tempTitleArr:NSMutableArray = NSMutableArray(capacity: 1)
     
     
 
@@ -226,27 +209,24 @@ extension LLHomeController :UIScrollViewDelegate{
     
     func scrollViewDidEndScrollingAnimation(scrollView: UIScrollView) {
         
-        for view in contentScroll.subviews {
+        for view in tempTitleArr {
             
-            if view.isMemberOfClass(UILabel.self) {
-                
-                let lable = view as! UILabel
-                
-                lable.textColor = UIColor.blackColor()
-            }
+            let tempView = view as!UILabel
+             tempView.textColor = UIColor.blackColor()
             
         }
         
-        let index = scrollView.contentOffset.x / contentScroll.width
+        let index = scrollView.contentOffset.x / scrollView.width
+        
         
         let lable = titleScroll.subviews[Int(index)] as!UILabel
         
-        lable.textColor = UIColor.redColor()
+         lable.textColor = UIColor.redColor()
         
         
-       UIView.animateWithDuration(0.3) {
+        UIView.animateWithDuration(0.25) {
             
-            if (lable.center.x > self.titleScroll.width / 2 &&  (self.titleScroll.contentSize.width - lable.center.x) > self.titleScroll.width / 2 ) == true{
+            if (lable.center.x > self.titleScroll.width / 2 &&  (self.titleScroll.contentSize.width - lable.center.x) > self.titleScroll.width / 2 ) {
                 
                 self.titleScroll.contentOffset = CGPoint(x: lable.center.x - self.titleScroll.width / 2, y: self.titleScroll.contentOffset.y)
             
@@ -258,26 +238,43 @@ extension LLHomeController :UIScrollViewDelegate{
         
         if self.titleScroll.contentSize.width - lable.center.x <= self.titleScroll.width / 2 {
             
-            self.titleScroll.contentOffset = CGPoint(x: self.titleScroll.width, y: self.titleScroll.contentOffset.y)
+            self.titleScroll.contentOffset = CGPoint(x: self.titleScroll.contentSize.width - self.titleScroll.width , y: self.titleScroll.contentOffset.y)
         }
         
         //指示器跟随滚动
         
-        UIView.animateWithDuration(0.5, animations: { 
+        UIView.animateWithDuration(0.0, animations: {
            self.indicatorView.center = CGPoint(x: lable.center.x, y: self.indicatorView.center.y)
         })
         
         
     }
         
-         let Vc = childViewControllers[Int(index)]
+   
         
-        contentScroll.addSubview(Vc.view)
+        let Vc = childViewControllers[Int(index)]
         
-        Vc.view.frame = contentScroll.bounds
+         contentScroll.addSubview(Vc.view)
+        
+         Vc.view.frame = scrollView.bounds
         
         
         
+    }
+    
+    func scrollViewDidEndDecelerating(scrollView: UIScrollView) {
+        
+        scrollViewDidEndScrollingAnimation(scrollView)
+    }
+    
+    func scrollViewDidEndDragging(scrollView: UIScrollView, willDecelerate decelerate: Bool) {
+        
+        
+        
+        if !decelerate {
+            
+            scrollView.setContentOffset(scrollView.contentOffset, animated: false)
+        }
     }
 
 }
