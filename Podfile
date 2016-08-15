@@ -13,5 +13,5 @@ pod "Alamofire"
 pod "MJRefresh"
 pod "SDWebImage"
 pod "SDCycleScrollView"
-pod “LoadingAnimation”
+
 end
