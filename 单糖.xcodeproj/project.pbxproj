@@ -12,6 +12,7 @@
 		06102AAA1D5DB87800D2BBF2 /* UIView+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 06102AA91D5DB87800D2BBF2 /* UIView+Extension.swift */; };
 		06102AAC1D5DC18200D2BBF2 /* LLNetWorkTools.swift in Sources */ = {isa = PBXBuildFile; fileRef = 06102AAB1D5DC18200D2BBF2 /* LLNetWorkTools.swift */; };
 		0615890E1D62AB31009D58A5 /* LLChidrenModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0615890D1D62AB31009D58A5 /* LLChidrenModel.swift */; };
+		06AA758E1D630EDD0048F3B6 /* LLDetailsController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 06AA758D1D630EDD0048F3B6 /* LLDetailsController.swift */; };
 		06D1E4891D5C167700CEBEED /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 06D1E4881D5C167700CEBEED /* AppDelegate.swift */; };
 		06D1E4901D5C167700CEBEED /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 06D1E48F1D5C167700CEBEED /* Assets.xcassets */; };
 		06D1E49E1D5C167700CEBEED /* __Tests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 06D1E49D1D5C167700CEBEED /* __Tests.swift */; };
@@ -25,6 +26,7 @@
 		06D1E4D71D5C1D8900CEBEED /* LLTabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 06D1E4D61D5C1D8900CEBEED /* LLTabBarController.swift */; };
 		06D1E4D91D5C21C600CEBEED /* LLCustermNavView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 06D1E4D81D5C21C600CEBEED /* LLCustermNavView.swift */; };
 		06DCADCD1D5DD0BA0073F0B3 /* LLTitleModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 06DCADCC1D5DD0BA0073F0B3 /* LLTitleModel.swift */; };
+		06FC4E2D1D62B83200451970 /* LLChliddrenCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 06FC4E2C1D62B83200451970 /* LLChliddrenCell.swift */; };
 		1D0F3A7218CBDCF030241009 /* Pods___.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DDFD9106D65BAB806BFBE924 /* Pods___.framework */; };
 		B5E24FF21D60854800E30D5C /* LLCarouselModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5E24FF11D60854800E30D5C /* LLCarouselModel.swift */; };
 /* End PBXBuildFile section */
@@ -52,6 +54,7 @@
 		06102AA91D5DB87800D2BBF2 /* UIView+Extension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIView+Extension.swift"; sourceTree = "<group>"; };
 		06102AAB1D5DC18200D2BBF2 /* LLNetWorkTools.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LLNetWorkTools.swift; sourceTree = "<group>"; };
 		0615890D1D62AB31009D58A5 /* LLChidrenModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LLChidrenModel.swift; sourceTree = "<group>"; };
+		06AA758D1D630EDD0048F3B6 /* LLDetailsController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LLDetailsController.swift; sourceTree = "<group>"; };
 		06D1E4851D5C167700CEBEED /* 单糖.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "单糖.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		06D1E4881D5C167700CEBEED /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		06D1E48F1D5C167700CEBEED /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -71,6 +74,7 @@
 		06D1E4D61D5C1D8900CEBEED /* LLTabBarController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LLTabBarController.swift; sourceTree = "<group>"; };
 		06D1E4D81D5C21C600CEBEED /* LLCustermNavView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LLCustermNavView.swift; sourceTree = "<group>"; };
 		06DCADCC1D5DD0BA0073F0B3 /* LLTitleModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LLTitleModel.swift; sourceTree = "<group>"; };
+		06FC4E2C1D62B83200451970 /* LLChliddrenCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LLChliddrenCell.swift; sourceTree = "<group>"; };
 		3D4D22BD952DBA77680D9363 /* Pods-单糖.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-单糖.debug.xcconfig"; path = "Pods/Target Support Files/Pods-单糖/Pods-单糖.debug.xcconfig"; sourceTree = "<group>"; };
 		B5E24FEA1D6077E600E30D5C /* 单糖-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "单糖-Bridging-Header.h"; sourceTree = "<group>"; };
 		B5E24FF11D60854800E30D5C /* LLCarouselModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LLCarouselModel.swift; sourceTree = "<group>"; };
@@ -253,6 +257,7 @@
 			children = (
 				06D1E4CC1D5C1D0300CEBEED /* LLHomeController.swift */,
 				06102AA71D5DB53600D2BBF2 /* LLChildrenController.swift */,
+				06AA758D1D630EDD0048F3B6 /* LLDetailsController.swift */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -270,6 +275,7 @@
 		06D1E4C21D5C1A3800CEBEED /* View */ = {
 			isa = PBXGroup;
 			children = (
+				06FC4E2C1D62B83200451970 /* LLChliddrenCell.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -544,6 +550,8 @@
 				06D1E4CF1D5C1D2E00CEBEED /* LLItemController.swift in Sources */,
 				06D1E4D71D5C1D8900CEBEED /* LLTabBarController.swift in Sources */,
 				0615890E1D62AB31009D58A5 /* LLChidrenModel.swift in Sources */,
+				06AA758E1D630EDD0048F3B6 /* LLDetailsController.swift in Sources */,
+				06FC4E2D1D62B83200451970 /* LLChliddrenCell.swift in Sources */,
 				06D1E4D51D5C1D7300CEBEED /* LLBaseNavController.swift in Sources */,
 				06102AAA1D5DB87800D2BBF2 /* UIView+Extension.swift in Sources */,
 				06102AA61D5DB38400D2BBF2 /* LLComment.swift in Sources */,
