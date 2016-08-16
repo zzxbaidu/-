@@ -13,7 +13,7 @@ class LLCarouselModel: NSObject {
     /// 轮播图
     var image_url:String?
     /// 图片的id
-     var id:Int?
+     var id:Int = -1
     /// 图片点击的字典
       var target:NSDictionary?
     /// 横幅图
@@ -21,13 +21,13 @@ class LLCarouselModel: NSObject {
     /// 覆盖图
      var cover_image_url:String?
     /// 帖子数
-    var posts_count:Int?
+    var posts_count:Int = -1
     /// 字幕标题
-    var subtitle:Int?
+    var subtitle:Int = -1
     /// 点进去的标题
-    var title:Int?
+    var title:Int = -1
 /// 图片点进入的ID
-    var target_id:Int?
+    var target_id:Int = -1
     
     init(dict:[String:AnyObject]) {
         

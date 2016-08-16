@@ -12,7 +12,7 @@ class LLTitleModel: NSObject {
     
     var editable:Bool?
     
-    var id:Int?
+    var id:Int = -1
     
     var name:String?
     

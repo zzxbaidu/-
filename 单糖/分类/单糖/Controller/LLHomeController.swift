@@ -42,6 +42,7 @@ class LLHomeController: LLBaseController {
             
             let title = titleArr[index] as? LLTitleModel
             childVc.title = title?.name
+            childVc.titleId = (title?.id)!
             addChildViewController(childVc)
             
             
@@ -96,16 +97,34 @@ class LLHomeController: LLBaseController {
         
         
         let imageArr = NSMutableArray(capacity: 1)
+        let temp_titleArr = NSMutableArray(capacity: 1)
         
         for index in 0..<carouseArr.count {
             
             let model = carouseArr[index] as? LLCarouselModel
-            imageArr.addObject((model?.image_url)!)
+            
+            guard let imageStr = model?.image_url else {
+            return
+            }
+            
+            guard let titleDict = model?.target else {
+                return
+            }
+            
+            guard let titleString = titleDict.objectForKey("title")   else{return
+            }
+           
+            imageArr.addObject(imageStr)
+
+            
+            temp_titleArr.addObject(titleString)
         }
         
         let  cycleView = SDCycleScrollView(frame: CGRect(x: 0,y: 0,width: SCREEN_WITH,height: 150), delegate: self, placeholderImage: UIImage(named: "Me_ProfileBackground"))
         
         cycleView.imageURLStringsGroup = imageArr as [AnyObject]
+        cycleView.titlesGroup = temp_titleArr as [AnyObject]
+        cycleView.pageControlAliment = SDCycleScrollViewPageContolAlimentRight
         fristChildVc.tableView.tableHeaderView = cycleView
 
         
@@ -119,15 +138,7 @@ class LLHomeController: LLBaseController {
     
     }
     
-     // MARK: ---- 添加轮播图的UI
-    private func setCarouselUI() {
-        
-        
-    
-    }
-    
-          // MARK: ----  获取Title数据
-    
+    // MARK: ----  获取Title数据
     private func getHomeTitleDate() {
         
         let urlStr =   baseUrl + "v2/channels/preset?gender=1&generation=1"
@@ -199,6 +210,8 @@ class LLHomeController: LLBaseController {
     }
     
     
+    
+    
           // MARK: ---- 切换按钮的点击方法
     
     @objc private func titleLableClick(recognizer:UIGestureRecognizer) {
@@ -223,7 +236,7 @@ class LLHomeController: LLBaseController {
         
         titleScr.showsVerticalScrollIndicator = false
         titleScr.showsHorizontalScrollIndicator = false
-        
+        titleScr.bounces = false
         return titleScr
     
     }()
@@ -234,8 +247,9 @@ class LLHomeController: LLBaseController {
         contentScr.delegate = self
         contentScr.backgroundColor = UIColor.clearColor()
         contentScr.pagingEnabled = false
-        contentScr.decelerationRate = 0.1
+        contentScr.decelerationRate = 0.0
         contentScr.bounces = false
+        contentScr.showsHorizontalScrollIndicator = false
         return contentScr
         
     }()
@@ -281,33 +295,35 @@ extension LLHomeController :UIScrollViewDelegate{
          lable.textColor = UIColor.redColor()
         
         
-        UIView.animateWithDuration(0.25) {
+        UIView.animateWithDuration(0.25, animations: {
             
-            if (lable.center.x > self.titleScroll.width / 2 &&  (self.titleScroll.contentSize.width - lable.center.x) > self.titleScroll.width / 2 ) {
+                if (lable.center.x > self.titleScroll.width / 2 &&  (self.titleScroll.contentSize.width - lable.center.x) > self.titleScroll.width / 2 ) {
+                    
+                    self.titleScroll.contentOffset = CGPoint(x: lable.center.x - self.titleScroll.width / 2, y: self.titleScroll.contentOffset.y)
+                    
+                }
                 
-                self.titleScroll.contentOffset = CGPoint(x: lable.center.x - self.titleScroll.width / 2, y: self.titleScroll.contentOffset.y)
+                if lable.center.x <= self.titleScroll.width / 2 {
+                    self.titleScroll.contentOffset = CGPoint(x: 0, y: self.titleScroll.contentOffset.y)
+                }
+                
+                if self.titleScroll.contentSize.width - lable.center.x <= self.titleScroll.width / 2 {
+                    
+                    self.titleScroll.contentOffset = CGPoint(x: self.titleScroll.contentSize.width - self.titleScroll.width , y: self.titleScroll.contentOffset.y)
+                }
+
             
+            }) { (_) in
+                //指示器跟随滚动
+                
+                UIView.animateWithDuration(0.25, animations: {
+                    self.indicatorView.center = CGPoint(x: lable.center.x, y: self.indicatorView.center.y)
+               })
+
+                
         }
         
-        if lable.center.x <= self.titleScroll.width / 2 {
-            self.titleScroll.contentOffset = CGPoint(x: 0, y: self.titleScroll.contentOffset.y)
-        }
         
-        if self.titleScroll.contentSize.width - lable.center.x <= self.titleScroll.width / 2 {
-            
-            self.titleScroll.contentOffset = CGPoint(x: self.titleScroll.contentSize.width - self.titleScroll.width , y: self.titleScroll.contentOffset.y)
-        }
-        
-        //指示器跟随滚动
-        
-        UIView.animateWithDuration(0.0, animations: {
-           self.indicatorView.center = CGPoint(x: lable.center.x, y: self.indicatorView.center.y)
-        })
-        
-        
-    }
-        
-   
         
         let Vc = childViewControllers[Int(index)]
         
@@ -324,16 +340,7 @@ extension LLHomeController :UIScrollViewDelegate{
         scrollViewDidEndScrollingAnimation(scrollView)
     }
     
-    func scrollViewDidEndDragging(scrollView: UIScrollView, willDecelerate decelerate: Bool) {
-        
-        
-        
-        if !decelerate {
-            
-            scrollView.setContentOffset(scrollView.contentOffset, animated: false)
-        }
-    }
-
+   
 }
 
 // MARK: - SDCycleScrollViewDelegate

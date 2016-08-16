@@ -10,10 +10,14 @@ import UIKit
 
 class LLChildrenController: UITableViewController {
 
+    
+   
+    var titleId:Int = -1
     override func viewDidLoad() {
         super.viewDidLoad()
         
         
+        print(titleId)
        
         // Do any additional setup after loading the view.
     }
@@ -23,15 +27,12 @@ class LLChildrenController: UITableViewController {
         // Dispose of any resources that can be recreated.
     }
     
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
-        // Get the new view controller using segue.destinationViewController.
-        // Pass the selected object to the new view controller.
-    }
-    */
-
+          // MARK: ---- 请求数据
+    
+    
+    
+      // MARK: ---- 懒加载
+    
+    
+    lazy var childrenArr = [LLChidrenModel]()
 }
