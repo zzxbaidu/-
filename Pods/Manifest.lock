@@ -1,5 +1,6 @@
 PODS:
   - Alamofire (3.4.1)
+  - IQKeyboardManager (4.0.4)
   - MJRefresh (3.1.12)
   - SDCycleScrollView (1.65):
     - SDWebImage (~> 3.7)
@@ -11,6 +12,7 @@ PODS:
 
 DEPENDENCIES:
   - Alamofire
+  - IQKeyboardManager
   - MJRefresh
   - SDCycleScrollView
   - SDWebImage
@@ -19,12 +21,13 @@ DEPENDENCIES:
 
 SPEC CHECKSUMS:
   Alamofire: 01a82e2f6c0f860ade35534c8dd88be61bdef40c
+  IQKeyboardManager: 4a6f83b540283c2645aaeba2bd8dc0f09b5c77f8
   MJRefresh: b96cdb21c4aa75a7b07654311ab2f315c497e806
   SDCycleScrollView: f72904c77698a7f93a41bcbbc2d78b073bf7326c
   SDWebImage: 35f9627a3e44b4f292a8a8ce6a531fa488239b91
   SnapKit: 0dd2fd157330f1ea11fd84da13e6be8a7a22bae0
   SVProgressHUD: b0830714205bea1317ea1a2ebc71e5633af334d4
 
-PODFILE CHECKSUM: 5c17a5cb426635948fade16013e4c9e08e2c3e1d
+PODFILE CHECKSUM: 9a35ab95af9ebd709e4ec0f763bcbde01d797bc3
 
 COCOAPODS: 1.0.1

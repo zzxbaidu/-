@@ -20,7 +20,7 @@ class LLNetWorkTools: NSObject {
     
     
     /**
-     分装一个 get 请求
+     封装一个 get 请求
      
      - parameter urlStr:   请求的 url
      - parameter param:     参数
@@ -30,7 +30,8 @@ class LLNetWorkTools: NSObject {
     
         let url = NSURL(string: urlStr)
     
-        
+        SVProgressHUD.showWithStatus("拼命加载中...")
+
         Alamofire.request(.GET, url!, parameters: param as? [String : AnyObject])
             .responseJSON { response in
                 
@@ -41,6 +42,8 @@ class LLNetWorkTools: NSObject {
                 SVProgressHUD.showErrorWithStatus("加载失败,请重试")
                 
                 }
+                
+                SVProgressHUD.dismiss()
         }
     
     }

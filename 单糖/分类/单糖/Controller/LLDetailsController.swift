@@ -15,8 +15,10 @@ class LLDetailsController: UIViewController {
     var titleName: String?
     
     var detailUrl:String?
-    
-    
+    //模型
+    var molde:LLChidrenModel?
+    /// 底部数据
+    var botoomView:LLDetailBootomView?
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -35,8 +37,21 @@ class LLDetailsController: UIViewController {
     
     private func setupUI() {
         
+        
+        botoomView = LLDetailBootomView(frame: CGRect(x:0 ,y: SCREEN_HEIGHT - 44,width: SCREEN_WITH,height: 44), block: { (button) in
+            
+        })
+        view.addSubview(botoomView!)
+      
+        botoomView?.model = molde
         self.title = titleName
         view.addSubview(webView)
+        
+        webView.snp_makeConstraints { (make) in
+            make.top.equalTo(self.view).offset(64)
+            make.left.right.equalTo(self.view)
+            make.bottom.equalTo((botoomView?.snp_top)!)
+        }
              guard  let detaiString = detailUrl else {
         
             return
@@ -46,14 +61,14 @@ class LLDetailsController: UIViewController {
         let request = NSURLRequest(URL: url!)
         webView.loadRequest(request)
 
-    
+       
        }
     
       // MARK: ---- 懒加载
     
     private lazy var webView:WKWebView = {
         
-        let web = WKWebView(frame: self.view.bounds)
+        let web = WKWebView()
         web.backgroundColor = UIColor.clearColor()
         web.UIDelegate = self
         web.navigationDelegate = self
@@ -64,15 +79,8 @@ class LLDetailsController: UIViewController {
         return web
     
     }()
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
-        // Get the new view controller using segue.destinationViewController.
-        // Pass the selected object to the new view controller.
-    }
-    */
+    
+    
 
 }
 
@@ -91,6 +99,33 @@ extension LLDetailsController:WKUIDelegate ,WKNavigationDelegate {
     
     func webView(webView: UIWebView, didFailLoadWithError error: NSError?) {
         SVProgressHUD.showErrorWithStatus("加载失败....")
+    }
+    /**
+     WKWebView 点击链接无反应
+     */
+    func webView(webView: WKWebView, createWebViewWithConfiguration configuration: WKWebViewConfiguration, forNavigationAction navigationAction: WKNavigationAction, windowFeatures: WKWindowFeatures) -> WKWebView? {
+        
+        if (navigationAction.targetFrame?.mainFrame != true) {
+            webView.loadRequest(navigationAction.request)
+        }
+        
+        return nil
+    }
+    
+    func webView(webView: WKWebView, decidePolicyForNavigationAction navigationAction: WKNavigationAction, decisionHandler: (WKNavigationActionPolicy) -> Void) {
+        
+        if navigationAction.targetFrame == nil {
+            
+            print("跳转的是一个新页面")
+            
+            self.botoomView?.hidden = true
+            webView.loadRequest(navigationAction.request)
+        }else {
+        self.botoomView?.hidden = false
+        }
+        
+        decisionHandler(.Allow)
+        
     }
 
 }

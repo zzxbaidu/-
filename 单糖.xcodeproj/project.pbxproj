@@ -13,6 +13,11 @@
 		06102AAC1D5DC18200D2BBF2 /* LLNetWorkTools.swift in Sources */ = {isa = PBXBuildFile; fileRef = 06102AAB1D5DC18200D2BBF2 /* LLNetWorkTools.swift */; };
 		0615890E1D62AB31009D58A5 /* LLChidrenModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0615890D1D62AB31009D58A5 /* LLChidrenModel.swift */; };
 		06AA758E1D630EDD0048F3B6 /* LLDetailsController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 06AA758D1D630EDD0048F3B6 /* LLDetailsController.swift */; };
+		06AA75901D63F6E50048F3B6 /* LLRefreshGifHeader.swift in Sources */ = {isa = PBXBuildFile; fileRef = 06AA758F1D63F6E50048F3B6 /* LLRefreshGifHeader.swift */; };
+		06AA75921D6406710048F3B6 /* LLDetailBootomView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 06AA75911D6406710048F3B6 /* LLDetailBootomView.swift */; };
+		06AA75941D6443D30048F3B6 /* LLSearchController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 06AA75931D6443D20048F3B6 /* LLSearchController.swift */; };
+		06AA75961D6444FA0048F3B6 /* LLSearchNavTitleView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 06AA75951D6444FA0048F3B6 /* LLSearchNavTitleView.swift */; };
+		06AA75981D6452ED0048F3B6 /* LLSearchChildrenController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 06AA75971D6452ED0048F3B6 /* LLSearchChildrenController.swift */; };
 		06D1E4891D5C167700CEBEED /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 06D1E4881D5C167700CEBEED /* AppDelegate.swift */; };
 		06D1E4901D5C167700CEBEED /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 06D1E48F1D5C167700CEBEED /* Assets.xcassets */; };
 		06D1E49E1D5C167700CEBEED /* __Tests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 06D1E49D1D5C167700CEBEED /* __Tests.swift */; };
@@ -55,6 +60,11 @@
 		06102AAB1D5DC18200D2BBF2 /* LLNetWorkTools.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LLNetWorkTools.swift; sourceTree = "<group>"; };
 		0615890D1D62AB31009D58A5 /* LLChidrenModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LLChidrenModel.swift; sourceTree = "<group>"; };
 		06AA758D1D630EDD0048F3B6 /* LLDetailsController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LLDetailsController.swift; sourceTree = "<group>"; };
+		06AA758F1D63F6E50048F3B6 /* LLRefreshGifHeader.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LLRefreshGifHeader.swift; sourceTree = "<group>"; };
+		06AA75911D6406710048F3B6 /* LLDetailBootomView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LLDetailBootomView.swift; sourceTree = "<group>"; };
+		06AA75931D6443D20048F3B6 /* LLSearchController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LLSearchController.swift; sourceTree = "<group>"; };
+		06AA75951D6444FA0048F3B6 /* LLSearchNavTitleView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LLSearchNavTitleView.swift; sourceTree = "<group>"; };
+		06AA75971D6452ED0048F3B6 /* LLSearchChildrenController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LLSearchChildrenController.swift; sourceTree = "<group>"; };
 		06D1E4851D5C167700CEBEED /* 单糖.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "单糖.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		06D1E4881D5C167700CEBEED /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		06D1E48F1D5C167700CEBEED /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -258,6 +268,8 @@
 				06D1E4CC1D5C1D0300CEBEED /* LLHomeController.swift */,
 				06102AA71D5DB53600D2BBF2 /* LLChildrenController.swift */,
 				06AA758D1D630EDD0048F3B6 /* LLDetailsController.swift */,
+				06AA75931D6443D20048F3B6 /* LLSearchController.swift */,
+				06AA75971D6452ED0048F3B6 /* LLSearchChildrenController.swift */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -276,6 +288,8 @@
 			isa = PBXGroup;
 			children = (
 				06FC4E2C1D62B83200451970 /* LLChliddrenCell.swift */,
+				06AA75911D6406710048F3B6 /* LLDetailBootomView.swift */,
+				06AA75951D6444FA0048F3B6 /* LLSearchNavTitleView.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -340,6 +354,7 @@
 				06102AA51D5DB38400D2BBF2 /* LLComment.swift */,
 				06102AAB1D5DC18200D2BBF2 /* LLNetWorkTools.swift */,
 				B5E24FEA1D6077E600E30D5C /* 单糖-Bridging-Header.h */,
+				06AA758F1D63F6E50048F3B6 /* LLRefreshGifHeader.swift */,
 			);
 			path = base;
 			sourceTree = "<group>";
@@ -545,21 +560,26 @@
 			buildActionMask = 2147483647;
 			files = (
 				06D1E4D11D5C1D4200CEBEED /* LLClassController.swift in Sources */,
+				06AA75961D6444FA0048F3B6 /* LLSearchNavTitleView.swift in Sources */,
+				06AA75921D6406710048F3B6 /* LLDetailBootomView.swift in Sources */,
 				06102AA81D5DB53600D2BBF2 /* LLChildrenController.swift in Sources */,
 				06D1E4D31D5C1D5400CEBEED /* LLMeController.swift in Sources */,
 				06D1E4CF1D5C1D2E00CEBEED /* LLItemController.swift in Sources */,
 				06D1E4D71D5C1D8900CEBEED /* LLTabBarController.swift in Sources */,
+				06AA75901D63F6E50048F3B6 /* LLRefreshGifHeader.swift in Sources */,
 				0615890E1D62AB31009D58A5 /* LLChidrenModel.swift in Sources */,
 				06AA758E1D630EDD0048F3B6 /* LLDetailsController.swift in Sources */,
 				06FC4E2D1D62B83200451970 /* LLChliddrenCell.swift in Sources */,
 				06D1E4D51D5C1D7300CEBEED /* LLBaseNavController.swift in Sources */,
 				06102AAA1D5DB87800D2BBF2 /* UIView+Extension.swift in Sources */,
 				06102AA61D5DB38400D2BBF2 /* LLComment.swift in Sources */,
+				06AA75981D6452ED0048F3B6 /* LLSearchChildrenController.swift in Sources */,
 				06D1E4CB1D5C1CD100CEBEED /* LLBaseController.swift in Sources */,
 				06D1E4CD1D5C1D0300CEBEED /* LLHomeController.swift in Sources */,
 				06DCADCD1D5DD0BA0073F0B3 /* LLTitleModel.swift in Sources */,
 				06D1E4891D5C167700CEBEED /* AppDelegate.swift in Sources */,
 				06102AAC1D5DC18200D2BBF2 /* LLNetWorkTools.swift in Sources */,
+				06AA75941D6443D30048F3B6 /* LLSearchController.swift in Sources */,
 				B5E24FF21D60854800E30D5C /* LLCarouselModel.swift in Sources */,
 				06D1E4D91D5C21C600CEBEED /* LLCustermNavView.swift in Sources */,
 			);

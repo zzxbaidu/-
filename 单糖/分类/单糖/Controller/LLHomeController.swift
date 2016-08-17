@@ -13,20 +13,31 @@ import SDWebImage
 
 class LLHomeController: LLBaseController {
 /// 设置可视的标题为3个
-    let visualCount = 4
+    let visualCount = 6
     
     override func viewDidLoad() {
         super.viewDidLoad()
         automaticallyAdjustsScrollViewInsets = false
         getCarouselImage()
         
+        //添加右边的搜索按钮
+        self.navigationItem.rightBarButtonItem = UIBarButtonItem(image: UIImage(named: "Feed_SearchBtn_18x18_"), style: .Plain, target: self, action: #selector(LLHomeController.seacrchClick))
+        
       }
 
-    override func didReceiveMemoryWarning() {
+        override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
     
+    // MARK: ---- 搜索按钮的点击方法
+    @objc private func seacrchClick() {
+        
+        
+        self.navigationController?.pushViewController(LLSearchController(), animated: true)
+        
+    }
+
       // MARK: ---- 添加 UI
     
     private func setupUI() {
@@ -142,6 +153,8 @@ class LLHomeController: LLBaseController {
     private func getHomeTitleDate() {
         
         let urlStr =   baseUrl + "v2/channels/preset?gender=1&generation=1"
+        
+      
         LLNetWorkTools.sharedTools.loadGETDate(urlStr, param: "") { (backDate) in
             
             let resultDict = backDate as!NSDictionary
@@ -158,7 +171,7 @@ class LLHomeController: LLBaseController {
             
           //转模型
            
-            
+         
             for index in 0..<channelsDict.count  {
                 
                 let model = LLTitleModel(dict: channelsDict[index] as! [String : AnyObject])
@@ -246,7 +259,7 @@ class LLHomeController: LLBaseController {
         let contentScr = UIScrollView(frame: CGRect(x: 0, y: 108, width: SCREEN_WITH, height: SCREEN_HEIGHT - 108))
         contentScr.delegate = self
         contentScr.backgroundColor = UIColor.clearColor()
-        contentScr.pagingEnabled = false
+        contentScr.pagingEnabled = true
         contentScr.decelerationRate = 0.0
         contentScr.bounces = false
         contentScr.showsHorizontalScrollIndicator = false
