@@ -16,3 +16,7 @@ let  SCREEN_HEIGHT = UIScreen.mainScreen().bounds.size.height
 let   baseUrl = "http://api.dantangapp.com/"
 
 
+
+let LLSeachNotification = "seachNotification"
+
+

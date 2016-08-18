@@ -7,41 +7,45 @@
 //
 
 import UIKit
-
+import SVProgressHUD
 class LLSearchController: LLBaseController {
     /// 设置可视的标题为3个
     let visualCount = 2
+    
+    var serchStr:String?
+
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        view.backgroundColor = UIColor.whiteColor()
 
         
       navigationItem.titleView = LLSearchNavTitleView(frame: CGRect(x: 50, y: 0, width: SCREEN_WITH - 100, height: 35), block: { (searchField) in
-        //print(searchField.text)
+        
+        self.rightSearchClick(searchField.text!)
+        
+        self.serchStr = searchField.text
       })
         
-        navigationItem.rightBarButtonItem = UIBarButtonItem(title: "搜索", style: .Plain, target: self, action: #selector(LLSearchController.rightSearchClick))
-        navigationItem.rightBarButtonItem?.tintColor = UIColor.whiteColor()
-        
-       // setupUI()
+        setupUI()
 
     }
     
-    override func viewDidAppear(animated: Bool) {
-        super.viewDidAppear(animated)
-        
-        
-    }
-
-    override func didReceiveMemoryWarning() {
+       override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
           // MARK: ---- 搜索 按钮的点击方法 (有 bug)
-    @objc private func rightSearchClick() {
+    @objc private func rightSearchClick(searchName:NSString) {
         
-        
-        tempTitleArr.removeAllObjects()
-            setupUI()
+         guard !searchName.isEqualToString("") else
+           {
+      let aleterView = UIAlertView(title: "温馨提示", message: "搜索的关键字不能为空", delegate:  nil, cancelButtonTitle: "确定")
+         aleterView.show()
+            return
+            
+            }
+           NSNotificationCenter.defaultCenter().postNotificationName(LLSeachNotification, object: searchName)
         
     }
     
@@ -50,14 +54,14 @@ class LLSearchController: LLBaseController {
     private func setupUI() {
         
         
-        view.addSubview(titleScroll)
+        view.addSubview(titleView)
         view.addSubview(contentScroll)
               
         //添加titleScroll中间的分割线
         
         let dividerView = UIView()
         
-        titleScroll.addSubview(dividerView)
+        titleView.addSubview(dividerView)
         dividerView.frame = CGRect(x: SCREEN_WITH / 2, y: 0, width: 0.8, height: 44)
         dividerView.alpha = 0.7
         dividerView.backgroundColor = UIColor.darkGrayColor()
@@ -69,6 +73,7 @@ class LLSearchController: LLBaseController {
             let childVc = LLSearchChildrenController()
             
             let title = titleArr[index]
+            
             childVc.childControllerIndex = index
             childVc.title = title
             addChildViewController(childVc)
@@ -85,9 +90,10 @@ class LLSearchController: LLBaseController {
             let lableX = CGFloat (index) * lableW
             
             let titleLable = UILabel(frame: CGRect(x: lableX, y: CGFloat (lableY), width: lableW, height: lableH))
+          
             titleLable.tag = index
             titleLable.text = childViewControllers[index].title
-            titleScroll.addSubview(titleLable)
+            titleView.addSubview(titleLable)
             tempTitleArr.addObject(titleLable)
             titleLable.textAlignment = .Center
             titleLable.font = UIFont.systemFontOfSize(16)
@@ -107,10 +113,7 @@ class LLSearchController: LLBaseController {
         
         let offSetX = CGFloat(childViewControllers.count) * SCREEN_WITH
         contentScroll.contentSize = CGSizeMake(offSetX, 0)
-        
-        //设置 的偏移量
-        
-        titleScroll.contentSize = CGSizeMake(SCREEN_WITH / CGFloat (visualCount) *  CGFloat(titleArr.count), 0)
+    
         
         //设置默认控制器
         guard let fristChildVc = childViewControllers.first as?LLSearchChildrenController  else{
@@ -118,14 +121,14 @@ class LLSearchController: LLBaseController {
         }
         
         fristChildVc.view.frame = contentScroll.bounds
-        
+        fristChildVc.childControllerIndex = 0
         contentScroll.addSubview(fristChildVc.view)
         
         
         //添加指示器 取出第一个 UILable
         let fristLable = tempTitleArr[0] as!UILabel
         indicatorView.frame = CGRect(x: fristLable.x, y: fristLable.y + fristLable.height - 2, width: fristLable.width, height: 2)
-        titleScroll.addSubview(indicatorView)
+        titleView.addSubview(indicatorView)
         
         
         
@@ -149,13 +152,11 @@ class LLSearchController: LLBaseController {
     }
 
           // MARK: ---- 懒加载
-    private lazy var titleScroll:UIScrollView = {
+    private lazy var titleView:UIView = {
         
-        let titleScr = UIScrollView(frame: CGRect(x: 0, y: 64, width: SCREEN_WITH, height: 44))
-        titleScr.showsVerticalScrollIndicator = false
-        titleScr.showsHorizontalScrollIndicator = false
-        titleScr.bounces = false
-        return titleScr
+        let titleScr = UIView(frame: CGRect(x: 0, y: 64, width: SCREEN_WITH, height: 44))
+        titleScr.backgroundColor = UIColor.whiteColor()
+           return titleScr
         
     }()
     ///容器视图
@@ -194,9 +195,9 @@ class LLSearchController: LLBaseController {
 // MARK: - UIScrollViewDelegate
 extension LLSearchController :UIScrollViewDelegate {
     
-  
-    func scrollViewDidEndScrollingAnimation(scrollView: UIScrollView) {
-        
+    
+    
+    func scrollViewDidScroll(scrollView: UIScrollView) {
         for view in tempTitleArr {
             
             let tempView = view as!UILabel
@@ -213,23 +214,6 @@ extension LLSearchController :UIScrollViewDelegate {
         
         
         UIView.animateWithDuration(0.25, animations: {
-            
-            if (lable.center.x > self.titleScroll.width / 2 &&  (self.titleScroll.contentSize.width - lable.center.x) > self.titleScroll.width / 2 ) {
-                
-                self.titleScroll.contentOffset = CGPoint(x: lable.center.x - self.titleScroll.width / 2, y: self.titleScroll.contentOffset.y)
-                
-            }
-            
-            if lable.center.x <= self.titleScroll.width / 2 {
-                self.titleScroll.contentOffset = CGPoint(x: 0, y: self.titleScroll.contentOffset.y)
-            }
-            
-            if self.titleScroll.contentSize.width - lable.center.x <= self.titleScroll.width / 2 {
-                
-                self.titleScroll.contentOffset = CGPoint(x: self.titleScroll.contentSize.width - self.titleScroll.width , y: self.titleScroll.contentOffset.y)
-            }
-            
-            
         }) { (_) in
             //指示器跟随滚动
             
@@ -242,19 +226,35 @@ extension LLSearchController :UIScrollViewDelegate {
         
         
         
-        let Vc = childViewControllers[Int(index)]
+        let Vc = childViewControllers[Int(index)] as?LLSearchChildrenController
         
-        contentScroll.addSubview(Vc.view)
+        contentScroll.addSubview(Vc!.view)
         
-        Vc.view.frame = scrollView.bounds
+        Vc?.childControllerIndex = Int(index)
+        
+        //请求专题的数据
+        if index == 1 {
+            
+            guard let seachString = serchStr else {
+            return
+            }
+           Vc?.getSearchDate(seachString)
+        }
+        Vc!.view.frame = scrollView.bounds
         
         
-        
+  
     }
+    
+  
+//    func scrollViewDidEndScrollingAnimation(scrollView: UIScrollView) {
+//        
+//        
+//    }
     
     func scrollViewDidEndDecelerating(scrollView: UIScrollView) {
         
-        scrollViewDidEndScrollingAnimation(scrollView)
+        scrollViewDidScroll(scrollView)
     }
     
     

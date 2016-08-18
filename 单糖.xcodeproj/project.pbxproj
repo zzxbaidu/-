@@ -30,6 +30,12 @@
 		06D1E4D51D5C1D7300CEBEED /* LLBaseNavController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 06D1E4D41D5C1D7300CEBEED /* LLBaseNavController.swift */; };
 		06D1E4D71D5C1D8900CEBEED /* LLTabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 06D1E4D61D5C1D8900CEBEED /* LLTabBarController.swift */; };
 		06D1E4D91D5C21C600CEBEED /* LLCustermNavView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 06D1E4D81D5C21C600CEBEED /* LLCustermNavView.swift */; };
+		06DB0BF61D65975E00F7ABB2 /* LLSearchCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 06DB0BF51D65975E00F7ABB2 /* LLSearchCollectionViewCell.swift */; };
+		06DB0BF81D659BA900F7ABB2 /* LLSearchCollectionModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 06DB0BF71D659BA900F7ABB2 /* LLSearchCollectionModel.swift */; };
+		06DB0BFA1D65A9A800F7ABB2 /* LLSearchTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 06DB0BF91D65A9A800F7ABB2 /* LLSearchTableViewCell.swift */; };
+		06DB0BFC1D65B36300F7ABB2 /* LLItemModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 06DB0BFB1D65B36300F7ABB2 /* LLItemModel.swift */; };
+		06DB0BFE1D65B96E00F7ABB2 /* LLItemnCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 06DB0BFD1D65B96E00F7ABB2 /* LLItemnCell.swift */; };
+		06DB0C001D65BC6700F7ABB2 /* LLDeatilItemController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 06DB0BFF1D65BC6700F7ABB2 /* LLDeatilItemController.swift */; };
 		06DCADCD1D5DD0BA0073F0B3 /* LLTitleModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 06DCADCC1D5DD0BA0073F0B3 /* LLTitleModel.swift */; };
 		06FC4E2D1D62B83200451970 /* LLChliddrenCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 06FC4E2C1D62B83200451970 /* LLChliddrenCell.swift */; };
 		1D0F3A7218CBDCF030241009 /* Pods___.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DDFD9106D65BAB806BFBE924 /* Pods___.framework */; };
@@ -83,6 +89,12 @@
 		06D1E4D41D5C1D7300CEBEED /* LLBaseNavController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LLBaseNavController.swift; sourceTree = "<group>"; };
 		06D1E4D61D5C1D8900CEBEED /* LLTabBarController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LLTabBarController.swift; sourceTree = "<group>"; };
 		06D1E4D81D5C21C600CEBEED /* LLCustermNavView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LLCustermNavView.swift; sourceTree = "<group>"; };
+		06DB0BF51D65975E00F7ABB2 /* LLSearchCollectionViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LLSearchCollectionViewCell.swift; sourceTree = "<group>"; };
+		06DB0BF71D659BA900F7ABB2 /* LLSearchCollectionModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LLSearchCollectionModel.swift; sourceTree = "<group>"; };
+		06DB0BF91D65A9A800F7ABB2 /* LLSearchTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LLSearchTableViewCell.swift; sourceTree = "<group>"; };
+		06DB0BFB1D65B36300F7ABB2 /* LLItemModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LLItemModel.swift; sourceTree = "<group>"; };
+		06DB0BFD1D65B96E00F7ABB2 /* LLItemnCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LLItemnCell.swift; sourceTree = "<group>"; };
+		06DB0BFF1D65BC6700F7ABB2 /* LLDeatilItemController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LLDeatilItemController.swift; sourceTree = "<group>"; };
 		06DCADCC1D5DD0BA0073F0B3 /* LLTitleModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LLTitleModel.swift; sourceTree = "<group>"; };
 		06FC4E2C1D62B83200451970 /* LLChliddrenCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LLChliddrenCell.swift; sourceTree = "<group>"; };
 		3D4D22BD952DBA77680D9363 /* Pods-单糖.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-单糖.debug.xcconfig"; path = "Pods/Target Support Files/Pods-单糖/Pods-单糖.debug.xcconfig"; sourceTree = "<group>"; };
@@ -234,6 +246,7 @@
 			isa = PBXGroup;
 			children = (
 				06D1E4CE1D5C1D2E00CEBEED /* LLItemController.swift */,
+				06DB0BFF1D65BC6700F7ABB2 /* LLDeatilItemController.swift */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -241,6 +254,7 @@
 		06D1E4BD1D5C1A3800CEBEED /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				06DB0BFB1D65B36300F7ABB2 /* LLItemModel.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -248,6 +262,7 @@
 		06D1E4BE1D5C1A3800CEBEED /* View */ = {
 			isa = PBXGroup;
 			children = (
+				06DB0BFD1D65B96E00F7ABB2 /* LLItemnCell.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -280,6 +295,7 @@
 				06DCADCC1D5DD0BA0073F0B3 /* LLTitleModel.swift */,
 				B5E24FF11D60854800E30D5C /* LLCarouselModel.swift */,
 				0615890D1D62AB31009D58A5 /* LLChidrenModel.swift */,
+				06DB0BF71D659BA900F7ABB2 /* LLSearchCollectionModel.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -290,6 +306,8 @@
 				06FC4E2C1D62B83200451970 /* LLChliddrenCell.swift */,
 				06AA75911D6406710048F3B6 /* LLDetailBootomView.swift */,
 				06AA75951D6444FA0048F3B6 /* LLSearchNavTitleView.swift */,
+				06DB0BF51D65975E00F7ABB2 /* LLSearchCollectionViewCell.swift */,
+				06DB0BF91D65A9A800F7ABB2 /* LLSearchTableViewCell.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -560,8 +578,11 @@
 			buildActionMask = 2147483647;
 			files = (
 				06D1E4D11D5C1D4200CEBEED /* LLClassController.swift in Sources */,
+				06DB0BFE1D65B96E00F7ABB2 /* LLItemnCell.swift in Sources */,
 				06AA75961D6444FA0048F3B6 /* LLSearchNavTitleView.swift in Sources */,
+				06DB0BFC1D65B36300F7ABB2 /* LLItemModel.swift in Sources */,
 				06AA75921D6406710048F3B6 /* LLDetailBootomView.swift in Sources */,
+				06DB0BF81D659BA900F7ABB2 /* LLSearchCollectionModel.swift in Sources */,
 				06102AA81D5DB53600D2BBF2 /* LLChildrenController.swift in Sources */,
 				06D1E4D31D5C1D5400CEBEED /* LLMeController.swift in Sources */,
 				06D1E4CF1D5C1D2E00CEBEED /* LLItemController.swift in Sources */,
@@ -572,9 +593,12 @@
 				06FC4E2D1D62B83200451970 /* LLChliddrenCell.swift in Sources */,
 				06D1E4D51D5C1D7300CEBEED /* LLBaseNavController.swift in Sources */,
 				06102AAA1D5DB87800D2BBF2 /* UIView+Extension.swift in Sources */,
+				06DB0C001D65BC6700F7ABB2 /* LLDeatilItemController.swift in Sources */,
 				06102AA61D5DB38400D2BBF2 /* LLComment.swift in Sources */,
+				06DB0BFA1D65A9A800F7ABB2 /* LLSearchTableViewCell.swift in Sources */,
 				06AA75981D6452ED0048F3B6 /* LLSearchChildrenController.swift in Sources */,
 				06D1E4CB1D5C1CD100CEBEED /* LLBaseController.swift in Sources */,
+				06DB0BF61D65975E00F7ABB2 /* LLSearchCollectionViewCell.swift in Sources */,
 				06D1E4CD1D5C1D0300CEBEED /* LLHomeController.swift in Sources */,
 				06DCADCD1D5DD0BA0073F0B3 /* LLTitleModel.swift in Sources */,
 				06D1E4891D5C167700CEBEED /* AppDelegate.swift in Sources */,

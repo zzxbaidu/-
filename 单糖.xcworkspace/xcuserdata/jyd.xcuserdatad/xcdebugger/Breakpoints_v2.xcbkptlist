@@ -19,13 +19,13 @@
             shouldBeEnabled = "Yes"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
-            filePath = "&#x5355;&#x7cd6;/&#x5206;&#x7c7b;/&#x5355;&#x7cd6;/Controller/LLSearchController.swift"
-            timestampString = "493121187.161535"
+            filePath = "&#x5355;&#x7cd6;/&#x5206;&#x7c7b;/&#x5355;&#x54c1;/Controller/LLItemController.swift"
+            timestampString = "493207761.865607"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "58"
-            endingLineNumber = "58"
-            landmarkName = "setupUI()"
+            startingLineNumber = "106"
+            endingLineNumber = "106"
+            landmarkName = "loadDate()"
             landmarkType = "5">
          </BreakpointContent>
       </BreakpointProxy>

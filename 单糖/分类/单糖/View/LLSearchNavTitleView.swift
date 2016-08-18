@@ -23,10 +23,29 @@ class LLSearchNavTitleView: UIView {
         backgroundColor = UIColor(colorLiteralRed: 217 / 255.0, green: 217 / 255.0, blue: 217 / 255.0, alpha: 0.8)
         layer.masksToBounds = true
         layer.cornerRadius = 7.0
+        
+        NSNotificationCenter.defaultCenter().addObserver(self, selector: #selector(textFieldNotifaction(_:)), name: UITextFieldTextDidChangeNotification, object: nil)
     }
     
     required init?(coder aDecoder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
+    }
+    
+    
+          // MARK: ---- 接收UITextField的通知方法
+    
+    @objc private func textFieldNotifaction(note:NSNotification) {
+        
+        
+              
+        
+    }
+    
+    deinit {
+        
+        NSNotificationCenter.defaultCenter().removeObserver(self)
+    
+    
     }
     
     
@@ -60,19 +79,26 @@ class LLSearchNavTitleView: UIView {
     private lazy var searchField:UITextField =  {
     
         let field = UITextField()
-       // field.delegate = self
         field.placeholder = "搜索商品. 专题"
+        field.returnKeyType = .Search
+        field.delegate = self
         return field
     
     }()
 
 }
 
-extension LLSearchNavTitleView:UITextFieldDelegate{
+extension LLSearchNavTitleView:UITextFieldDelegate {
     
+
     
-    func textFieldDidEndEditing(textField: UITextField) {
-      // searchCallBack!(searchField: textField)
+    func textFieldShouldReturn(textField: UITextField) -> Bool {
+       textField.resignFirstResponder()
+        searchCallBack!(searchField: textField)
+        return true
     }
 
+
 }
+
+

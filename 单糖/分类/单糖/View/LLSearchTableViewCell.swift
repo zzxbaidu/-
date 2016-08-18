@@ -1,66 +1,46 @@
 //
-//  LLChliddrenCell.swift
+//  LLSearchTableViewCell.swift
 //  单糖
 //
-//  Created by JYD on 16/8/16.
+//  Created by JYD on 16/8/18.
 //  Copyright © 2016年 周尊贤. All rights reserved.
 //
 
 import UIKit
 
-class LLChliddrenCell: UITableViewCell {
+class LLSearchTableViewCell: UITableViewCell {
 
-    
     var bgImageView:UIImageView?
     
     var likeButton:UIButton?
     var titleLable:UILabel?
-    var model:LLChidrenModel? {
-    
-        didSet {
-            
-            bgImageView?.sd_setImageWithURL(NSURL(string: (model?.cover_image_url)! as String), placeholderImage: UIImage(named: "Me_ProfileBackground"))
-           
-            
-         guard let likeCount = model?.likes_count else {
-           return
-            }
-             likeButton?.setTitle(String( likeCount), forState: .Normal)
-            guard let title = model?.title else {
-            return
-            }
-            titleLable?.text = String (title)
-        
-        }
-    
-    }
     
     var searchModel:LLSearchCollectionModel? {
         
         didSet {
-            bgImageView?.sd_setImageWithURL(NSURL(string: (model?.cover_image_url)! as String), placeholderImage: UIImage(named: "Me_ProfileBackground"))
+            bgImageView?.sd_setImageWithURL(NSURL(string: (searchModel?.cover_image_url)! as String), placeholderImage: UIImage(named: "Me_ProfileBackground"))
             
             
-            guard let likeCount = model?.likes_count else {
+            guard let likeCount = searchModel?.likes_count else {
                 return
             }
             likeButton?.setTitle(String( likeCount), forState: .Normal)
-            guard let title = model?.title else {
+            guard let title = searchModel?.title else {
                 return
             }
             titleLable?.text = String (title)
         }
-    
+        
     }
     
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code
     }
-
+    
     override func setSelected(selected: Bool, animated: Bool) {
         super.setSelected(selected, animated: animated)
-
+        
         // Configure the view for the selected state
     }
     
@@ -74,7 +54,7 @@ class LLChliddrenCell: UITableViewCell {
     }
     
     private func setupUI() {
-    
+        
         bgImageView = UIImageView()
         bgImageView!.layer.masksToBounds = true
         bgImageView!.layer.cornerRadius = 7
@@ -82,12 +62,12 @@ class LLChliddrenCell: UITableViewCell {
         
         bgImageView?.snp_makeConstraints(closure: { (make) in
             
-           make.top.equalTo(self.contentView).offset(5)
-           make.left.equalTo(self.contentView).offset(5)
-           make.right.equalTo(self.contentView).offset(-5)
-           make.bottom.equalTo(self.contentView).offset(-5)
+            make.top.equalTo(self.contentView).offset(5)
+            make.left.equalTo(self.contentView).offset(5)
+            make.right.equalTo(self.contentView).offset(-5)
+            make.bottom.equalTo(self.contentView).offset(-5)
             
-
+            
         })
         
         
@@ -125,8 +105,10 @@ class LLChliddrenCell: UITableViewCell {
             make.left.equalTo(bgImageView!).offset(12)
             make.bottom.equalTo(bgImageView!).offset(-12)
         })
-    
-    
+        
+        
     }
+    
+
 
 }
