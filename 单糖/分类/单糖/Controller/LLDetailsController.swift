@@ -19,6 +19,8 @@ class LLDetailsController: UIViewController {
     var molde:LLChidrenModel?
     /// 底部数据
     var botoomView:LLDetailBootomView?
+    /// 来源 //1 push 2present
+    var source:Int? = -1
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -38,19 +40,38 @@ class LLDetailsController: UIViewController {
     private func setupUI() {
         
         
-        botoomView = LLDetailBootomView(frame: CGRect(x:0 ,y: SCREEN_HEIGHT - 44,width: SCREEN_WITH,height: 44), block: { (button) in
+        
+        if source == 1 {
+            view.addSubview(botoomView!)
+
+            botoomView = LLDetailBootomView(frame: CGRect(x:0 ,y: SCREEN_HEIGHT - 44,width: SCREEN_WITH,height: 44), block: { (button) in
+                
+            })
+          botoomView?.model = molde
+        }else if source == 2 { //dismisll 来的
             
-        })
-        view.addSubview(botoomView!)
-      
-        botoomView?.model = molde
+            let navView = LLCustermNavView(frame: CGRectZero, type: 2, title: "商品详情", block: { (leftButton) in
+                self.dismissViewControllerAnimated(true, completion: nil)
+            })
+            navView.backgroundColor = UIColor.redColor()
+            view.addSubview(navView)
+            
+            navView.snp_makeConstraints(closure: { (make) in
+                make.left.right.equalTo(self.view)
+                make.height.equalTo(64)
+                make.top.equalTo(self.view)
+            })
+            
+        
+        }
+     
         self.title = titleName
         view.addSubview(webView)
         
         webView.snp_makeConstraints { (make) in
             make.top.equalTo(self.view).offset(64)
             make.left.right.equalTo(self.view)
-            make.bottom.equalTo((botoomView?.snp_top)!)
+            make.bottom.equalTo((self.view)!)
         }
              guard  let detaiString = detailUrl else {
         

@@ -37,6 +37,8 @@ class LLCustermNavView: UIView {
         addSubview(titleLable)
         titleLable.text = title as String
         
+        titleLable.textColor = UIColor.whiteColor()
+        
         titleLable.snp_makeConstraints { (make) in
             make.centerY.centerX.equalTo(self)
         }
