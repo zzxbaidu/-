@@ -20,3 +20,16 @@ let   baseUrl = "http://api.dantangapp.com/"
 let LLSeachNotification = "seachNotification"
 
 
+/// RGBA的颜色设置
+func LLColor(r:CGFloat, g:CGFloat, b:CGFloat, a:CGFloat) -> UIColor {
+    return UIColor(red: r / 255.0, green: g / 255.0, blue: b / 255.0, alpha: a)
+}
+
+/// 分类界面 顶部 item 的高
+let kitemH: CGFloat = 75
+/// 分类界面 顶部 item 的宽
+let kitemW: CGFloat = 150
+/// 我的界面头部图像的高度
+let kYMMineHeaderImageHeight: CGFloat = 200
+// 分享按钮背景高度
+let kTopViewH: CGFloat = 230

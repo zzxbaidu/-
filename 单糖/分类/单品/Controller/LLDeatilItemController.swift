@@ -163,16 +163,18 @@ class LLDeatilItemController: LLBaseController {
           // MARK: ---- 按钮的点击方法
     
     @objc private func rigthItemClick() {
-    
         
-      let   actionSheet = UIActionSheet(title: "分享到",
-                                    delegate: nil, cancelButtonTitle: "取消",
-                                    destructiveButtonTitle: nil,
-                                    otherButtonTitles: "微信好友", "微信朋友圈", "新浪微博", "QQ空间")
         
-       
+       YMActionSheet.show()
         
-        actionSheet.showInView(self.view)
+//      let   actionSheet = UIActionSheet(title: "分享到",
+//                                    delegate: nil, cancelButtonTitle: "取消",
+//                                    destructiveButtonTitle: nil,
+//                                    otherButtonTitles: "微信好友", "微信朋友圈", "新浪微博", "QQ空间")
+//        
+//       
+//        
+//        actionSheet.showInView(self.view)
     }
     
     @objc private func titleButtonClick(btn:UIButton) {
