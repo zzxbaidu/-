@@ -12,6 +12,13 @@
 		06102AAA1D5DB87800D2BBF2 /* UIView+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 06102AA91D5DB87800D2BBF2 /* UIView+Extension.swift */; };
 		06102AAC1D5DC18200D2BBF2 /* LLNetWorkTools.swift in Sources */ = {isa = PBXBuildFile; fileRef = 06102AAB1D5DC18200D2BBF2 /* LLNetWorkTools.swift */; };
 		0615890E1D62AB31009D58A5 /* LLChidrenModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0615890D1D62AB31009D58A5 /* LLChidrenModel.swift */; };
+		06910F231D6AC84B00E206B8 /* LLClasCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 06910F221D6AC84A00E206B8 /* LLClasCell.swift */; };
+		06910F251D6ACE4900E206B8 /* LLAdjustButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 06910F241D6ACE4900E206B8 /* LLAdjustButton.swift */; };
+		06910F271D6AD3C500E206B8 /* LLClassCollectionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 06910F261D6AD3C400E206B8 /* LLClassCollectionView.swift */; };
+		06910F291D6ADC3400E206B8 /* LLProjectCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 06910F281D6ADC3400E206B8 /* LLProjectCollectionViewCell.swift */; };
+		06910F2B1D6ADD8500E206B8 /* LLProjectModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 06910F2A1D6ADD8500E206B8 /* LLProjectModel.swift */; };
+		06910F2D1D6AF3C400E206B8 /* LLChannel_groupsModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 06910F2C1D6AF3C400E206B8 /* LLChannel_groupsModel.swift */; };
+		06910F2F1D6AFE5500E206B8 /* LLChannelBootomView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 06910F2E1D6AFE5500E206B8 /* LLChannelBootomView.swift */; };
 		06AA758E1D630EDD0048F3B6 /* LLDetailsController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 06AA758D1D630EDD0048F3B6 /* LLDetailsController.swift */; };
 		06AA75901D63F6E50048F3B6 /* LLRefreshGifHeader.swift in Sources */ = {isa = PBXBuildFile; fileRef = 06AA758F1D63F6E50048F3B6 /* LLRefreshGifHeader.swift */; };
 		06AA75921D6406710048F3B6 /* LLDetailBootomView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 06AA75911D6406710048F3B6 /* LLDetailBootomView.swift */; };
@@ -71,6 +78,13 @@
 		06102AA91D5DB87800D2BBF2 /* UIView+Extension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIView+Extension.swift"; sourceTree = "<group>"; };
 		06102AAB1D5DC18200D2BBF2 /* LLNetWorkTools.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LLNetWorkTools.swift; sourceTree = "<group>"; };
 		0615890D1D62AB31009D58A5 /* LLChidrenModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LLChidrenModel.swift; sourceTree = "<group>"; };
+		06910F221D6AC84A00E206B8 /* LLClasCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LLClasCell.swift; sourceTree = "<group>"; };
+		06910F241D6ACE4900E206B8 /* LLAdjustButton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LLAdjustButton.swift; sourceTree = "<group>"; };
+		06910F261D6AD3C400E206B8 /* LLClassCollectionView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LLClassCollectionView.swift; sourceTree = "<group>"; };
+		06910F281D6ADC3400E206B8 /* LLProjectCollectionViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LLProjectCollectionViewCell.swift; sourceTree = "<group>"; };
+		06910F2A1D6ADD8500E206B8 /* LLProjectModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LLProjectModel.swift; sourceTree = "<group>"; };
+		06910F2C1D6AF3C400E206B8 /* LLChannel_groupsModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LLChannel_groupsModel.swift; sourceTree = "<group>"; };
+		06910F2E1D6AFE5500E206B8 /* LLChannelBootomView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LLChannelBootomView.swift; sourceTree = "<group>"; };
 		06AA758D1D630EDD0048F3B6 /* LLDetailsController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LLDetailsController.swift; sourceTree = "<group>"; };
 		06AA758F1D63F6E50048F3B6 /* LLRefreshGifHeader.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LLRefreshGifHeader.swift; sourceTree = "<group>"; };
 		06AA75911D6406710048F3B6 /* LLDetailBootomView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LLDetailBootomView.swift; sourceTree = "<group>"; };
@@ -233,6 +247,8 @@
 		06D1E4B91D5C1A3800CEBEED /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				06910F2A1D6ADD8500E206B8 /* LLProjectModel.swift */,
+				06910F2C1D6AF3C400E206B8 /* LLChannel_groupsModel.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -240,6 +256,10 @@
 		06D1E4BA1D5C1A3800CEBEED /* View */ = {
 			isa = PBXGroup;
 			children = (
+				06910F221D6AC84A00E206B8 /* LLClasCell.swift */,
+				06910F261D6AD3C400E206B8 /* LLClassCollectionView.swift */,
+				06910F281D6ADC3400E206B8 /* LLProjectCollectionViewCell.swift */,
+				06910F2E1D6AFE5500E206B8 /* LLChannelBootomView.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -391,6 +411,7 @@
 				06DB0C071D67128500F7ABB2 /* YMActionSheet.swift */,
 				06DB0C091D67141900F7ABB2 /* YMShareButtonView.swift */,
 				06DB0C0B1D67145C00F7ABB2 /* YMVerticalButton.swift */,
+				06910F241D6ACE4900E206B8 /* LLAdjustButton.swift */,
 			);
 			path = base;
 			sourceTree = "<group>";
@@ -601,6 +622,7 @@
 				06AA75961D6444FA0048F3B6 /* LLSearchNavTitleView.swift in Sources */,
 				06DB0BFC1D65B36300F7ABB2 /* LLItemModel.swift in Sources */,
 				06AA75921D6406710048F3B6 /* LLDetailBootomView.swift in Sources */,
+				06910F2D1D6AF3C400E206B8 /* LLChannel_groupsModel.swift in Sources */,
 				06DB0C041D669A6D00F7ABB2 /* LLCommentsView.swift in Sources */,
 				06DB0BF81D659BA900F7ABB2 /* LLSearchCollectionModel.swift in Sources */,
 				06102AA81D5DB53600D2BBF2 /* LLChildrenController.swift in Sources */,
@@ -609,6 +631,8 @@
 				06D1E4D71D5C1D8900CEBEED /* LLTabBarController.swift in Sources */,
 				06DB0C0A1D67141900F7ABB2 /* YMShareButtonView.swift in Sources */,
 				06AA75901D63F6E50048F3B6 /* LLRefreshGifHeader.swift in Sources */,
+				06910F291D6ADC3400E206B8 /* LLProjectCollectionViewCell.swift in Sources */,
+				06910F2B1D6ADD8500E206B8 /* LLProjectModel.swift in Sources */,
 				0615890E1D62AB31009D58A5 /* LLChidrenModel.swift in Sources */,
 				06AA758E1D630EDD0048F3B6 /* LLDetailsController.swift in Sources */,
 				06FC4E2D1D62B83200451970 /* LLChliddrenCell.swift in Sources */,
@@ -621,12 +645,16 @@
 				06DB0BFA1D65A9A800F7ABB2 /* LLSearchTableViewCell.swift in Sources */,
 				06AA75981D6452ED0048F3B6 /* LLSearchChildrenController.swift in Sources */,
 				06D1E4CB1D5C1CD100CEBEED /* LLBaseController.swift in Sources */,
+				06910F231D6AC84B00E206B8 /* LLClasCell.swift in Sources */,
 				06DB0BF61D65975E00F7ABB2 /* LLSearchCollectionViewCell.swift in Sources */,
 				06D1E4CD1D5C1D0300CEBEED /* LLHomeController.swift in Sources */,
+				06910F2F1D6AFE5500E206B8 /* LLChannelBootomView.swift in Sources */,
+				06910F271D6AD3C500E206B8 /* LLClassCollectionView.swift in Sources */,
 				06DCADCD1D5DD0BA0073F0B3 /* LLTitleModel.swift in Sources */,
 				06D1E4891D5C167700CEBEED /* AppDelegate.swift in Sources */,
 				06102AAC1D5DC18200D2BBF2 /* LLNetWorkTools.swift in Sources */,
 				06DB0C021D669A1B00F7ABB2 /* LLPhotoShowView.swift in Sources */,
+				06910F251D6ACE4900E206B8 /* LLAdjustButton.swift in Sources */,
 				06AA75941D6443D30048F3B6 /* LLSearchController.swift in Sources */,
 				B5E24FF21D60854800E30D5C /* LLCarouselModel.swift in Sources */,
 				06D1E4D91D5C21C600CEBEED /* LLCustermNavView.swift in Sources */,

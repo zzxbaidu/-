@@ -120,6 +120,11 @@ class LLItemController: LLBaseController {
         
         let layout = UICollectionViewFlowLayout()
         
+       
+        
+        
+        
+        
         layout.itemSize = CGSizeMake( (SCREEN_WITH - 24) / 2, 220)
         
         let colletion = UICollectionView(frame: self.view.bounds, collectionViewLayout: layout)

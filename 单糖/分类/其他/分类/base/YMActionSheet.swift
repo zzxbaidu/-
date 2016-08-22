@@ -7,11 +7,10 @@
 //
 
 import UIKit
-/// 间距
-let kMargin: CGFloat = 10.0
 
 class YMActionSheet: UIView {
     
+       
     class func show() {
         let actionSheet = YMActionSheet()
         actionSheet.frame = UIScreen.mainScreen().bounds
@@ -31,49 +30,55 @@ class YMActionSheet: UIView {
         
         addSubview(bgView)
         
-        // 上部 分享界面
-        bgView.addSubview(topView)
-        // 下部取消按钮
         bgView.addSubview(cancelButton)
-        // 分享到 标签
-        topView.addSubview(shareLabel)
-        // 6 个分享按钮的 view
+        bgView.addSubview(topView)
+        bgView.addSubview(shareButtonView)
+        bgView.addSubview(shareLabel)
+
         topView.addSubview(shareButtonView)
         
-        topView.snp_makeConstraints { (make) in
-            
+        bgView.snp_makeConstraints { (make) in
+            make.left.right.equalTo(self)
+            make.bottom.equalTo(self).offset(-12)
+            make.height.equalTo(280)
         }
         
-        topView.snp_makeConstraints { (make) in
-            make.bottom.equalTo(cancelButton.snp_top).offset(-kMargin)
-            make.left.equalTo(cancelButton.snp_left)
-            make.right.equalTo(cancelButton.snp_right)
-            make.height.equalTo(kTopViewH)
-        }
         
-        cancelButton.snp_makeConstraints { (make) in
-            make.left.equalTo(bgView).offset(kMargin)
-            make.right.bottom.equalTo(bgView).offset(-kMargin)
-            make.height.equalTo(44)
-        }
+                cancelButton.snp_makeConstraints { (make) in
+                    make.left.equalTo(bgView).offset(kMargin)
+                    make.right.equalTo(bgView).offset(-kMargin)
+                    make.bottom.equalTo(bgView).offset(-kMargin)
+                    make.height.equalTo(44)
+                }
         
-        shareLabel.snp_makeConstraints { (make) in
-            make.left.right.top.equalTo(topView)
-            make.height.equalTo(30)
-        }
+                topView.snp_makeConstraints { (make) in
+                    make.bottom.equalTo(cancelButton.snp_top).offset(-kMargin)
+                    make.left.equalTo(cancelButton.snp_left)
+                    make.right.equalTo(cancelButton.snp_right)
+                    make.height.equalTo(kTopViewH)
+                }
+
+                    shareLabel.snp_makeConstraints { (make) in
+                    make.left.right.top.equalTo(topView)
+                    make.height.equalTo(30)
+                }
+
+
+        
+       
     }
     
     override func layoutSubviews() {
         super.layoutSubviews()
         UIView.animateWithDuration(0.25) {
-            self.bgView.y = SCREEN_WITH - self.bgView.height
+            self.bgView.y = SCREEN_HEIGHT - self.bgView.height
         }
     }
     
     // 底部 view
     private lazy var bgView: UIView = {
         let bgView = UIView()
-        bgView.frame = CGRectMake(0,  SCREEN_HEIGHT, SCREEN_WITH, 280)
+      
         return bgView
     }()
     // 上部 view
@@ -95,7 +100,12 @@ class YMActionSheet: UIView {
     }()
     // 6个按钮
     private lazy var shareButtonView: YMShareButtonView = {
-        let shareButtonView = YMShareButtonView()
+        let shareButtonView = YMShareButtonView(frame: CGRectZero, buttonClick: { (shareButton) in
+            
+            let alterView = UIAlertView(title: "提示", message: shareButton.titleLabel?.text, delegate: nil, cancelButtonTitle: "取消")
+            
+             alterView.show()
+        })
         shareButtonView.frame = CGRectMake(0, 30, SCREEN_WITH - 20, kTopViewH - 30)
         return shareButtonView
     }()

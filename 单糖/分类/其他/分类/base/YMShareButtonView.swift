@@ -29,9 +29,16 @@ class YMShareButtonView: UIView {
     let images = ["Share_WeChatTimelineIcon_70x70_", "Share_WeChatSessionIcon_70x70_", "Share_WeiboIcon_70x70_", "Share_QzoneIcon_70x70_", "Share_QQIcon_70x70_", "Share_CopyLinkIcon_70x70_"]
     // 标题数组
     let titles = ["微信朋友圈", "微信好友", "微博", "QQ 空间", "QQ 好友", "复制链接"]
+    //类似于OC中的typedef 回调按钮的点击方法
+    typealias shareBtnClick = (shareButton:UIButton )->Void
     
-    override init(frame: CGRect) {
+    /// 按钮的回调方法
+    var shareButton:shareBtnClick?
+    
+    init(frame: CGRect,buttonClick:shareBtnClick) {
         super.init(frame: frame)
+        
+        shareButton = buttonClick
         
         setupUI()
     }
@@ -91,7 +98,7 @@ class YMShareButtonView: UIView {
                 break
             }
         }
-        print(button.titleLabel!.text!)
+        shareButton!(shareButton: button)
     }
     
     required init?(coder aDecoder: NSCoder) {

@@ -40,6 +40,8 @@ class YMVerticalButton: UIButton {
         titleLabel?.y = imageView!.height
         titleLabel?.width = self.width
         titleLabel?.height = self.height - self.titleLabel!.y
+        
+        
     }
     
 }
