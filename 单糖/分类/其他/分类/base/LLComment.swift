@@ -37,3 +37,16 @@ let kYMMineHeaderImageHeight: CGFloat = 200
 // 分享按钮背景高度
 let kTopViewH: CGFloat = 230
 
+
+/// 专题合集的通知
+let  LLSpecialCollectionNotication = "specialCollectionNotication"
+
+
+/// 风格的通知
+let  LLStyleNotication = "LLStyleNotication"
+
+
+/// 风格的通知
+let  LLCategoryNotication = "LLCategoryNotication"
+
+

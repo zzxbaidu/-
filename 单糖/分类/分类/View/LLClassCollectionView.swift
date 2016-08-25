@@ -97,6 +97,18 @@ extension LLClassCollectionView:UICollectionViewDataSource,UICollectionViewDeleg
         //UIEdgeInsetsMake(top: CGFloat, _ left: CGFloat, _ bottom: CGFloat, _ right: CGFloat) -> UIEdgeInsets
         return UIEdgeInsetsMake(0, 12, 0, 12)
     }
+    
+    func collectionView(collectionView: UICollectionView, didSelectItemAtIndexPath indexPath: NSIndexPath) {
+        
+        //发送通知控制控制器跳转
+        let model = projuectArr[indexPath.row]
+        
+        NSNotificationCenter.defaultCenter().postNotificationName(LLSpecialCollectionNotication, object: model)
+        
+    }
+    
+  
+    
 
 
 }

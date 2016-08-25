@@ -8,16 +8,18 @@
 
 import UIKit
 
-class LLClasCell: UITableViewCell {
+protocol LLClasCellShowMoreButtonDelegate {
+    
+    func ShowMoreButtonDelegate()
+    
+}
 
- 
+class LLClasCell: UITableViewCell {
+    
     var titleDate:String? {
         
         didSet {
-            
-         
-            
-            titleLable.text = titleDate
+       titleLable.text = titleDate
             
             if titleDate == "专题合集" {
                 showMorebutton.hidden = false
@@ -31,11 +33,12 @@ class LLClasCell: UITableViewCell {
                 
             }else  {
                 
+                titleLable.hidden = true
                 
               contentView.addSubview(botoomView)
                 botoomView.snp_makeConstraints(closure: { (make) in
                     make.left.right.equalTo(contentView)
-                    make.top.equalTo(titleLable.snp_bottom).offset(5)
+                    make.top.equalTo(contentView)
                     make.bottom.equalTo(contentView)
                 })
                     
@@ -48,14 +51,28 @@ class LLClasCell: UITableViewCell {
         }
     
     }
+    
+    var  delegate:LLClasCellShowMoreButtonDelegate?
+    
     override init(style: UITableViewCellStyle, reuseIdentifier: String?) {
         super.init(style: style, reuseIdentifier: reuseIdentifier)
         
         setupUI()
+        
+        //查看更多的按钮的点击方法
+        showMorebutton.addTarget(self, action: #selector(LLClasCell.showMoreButton), forControlEvents: .TouchUpInside)
     }
     
     required init?(coder aDecoder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
+    }
+    
+          // MARK: ---- 按钮的点击方法
+    
+   @objc private func showMoreButton() {
+    
+       delegate?.ShowMoreButtonDelegate()
+    
     }
     
           // MARK: ---- 添加UI

@@ -21,9 +21,13 @@ class LLChidrenModel: NSObject {
      var short_title:NSString?
     /// cell 标题
      var title:NSString?
-    
+    /// cell 标题
+    var subtitle:NSString?
+
     /// 详情页
     var url:NSString?
+    
+    var id:Int = -2
     
     init(dict:[String:AnyObject]) {
         

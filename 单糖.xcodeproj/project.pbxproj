@@ -12,6 +12,13 @@
 		06102AAA1D5DB87800D2BBF2 /* UIView+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 06102AA91D5DB87800D2BBF2 /* UIView+Extension.swift */; };
 		06102AAC1D5DC18200D2BBF2 /* LLNetWorkTools.swift in Sources */ = {isa = PBXBuildFile; fileRef = 06102AAB1D5DC18200D2BBF2 /* LLNetWorkTools.swift */; };
 		0615890E1D62AB31009D58A5 /* LLChidrenModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0615890D1D62AB31009D58A5 /* LLChidrenModel.swift */; };
+		0664BE361D6E8F6C0021B193 /* LLCollectionDetailController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0664BE351D6E8F6C0021B193 /* LLCollectionDetailController.swift */; };
+		0664BE381D6E9B920021B193 /* LLClasDetailCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0664BE371D6E9B920021B193 /* LLClasDetailCell.swift */; };
+		0664BE3A1D6EC2530021B193 /* LLMoreShowCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0664BE391D6EC2530021B193 /* LLMoreShowCell.swift */; };
+		0664BE3C1D6ED1570021B193 /* LLMeHeadView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0664BE3B1D6ED1570021B193 /* LLMeHeadView.swift */; };
+		0664BE3E1D6ED79E0021B193 /* LLCustemButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0664BE3D1D6ED79E0021B193 /* LLCustemButton.swift */; };
+		0664BE401D6EE06A0021B193 /* LLMeBottomView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0664BE3F1D6EE06A0021B193 /* LLMeBottomView.swift */; };
+		0664BE441D6EF05E0021B193 /* LLLoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0664BE431D6EF05E0021B193 /* LLLoginViewController.swift */; };
 		06910F231D6AC84B00E206B8 /* LLClasCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 06910F221D6AC84A00E206B8 /* LLClasCell.swift */; };
 		06910F251D6ACE4900E206B8 /* LLAdjustButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 06910F241D6ACE4900E206B8 /* LLAdjustButton.swift */; };
 		06910F271D6AD3C500E206B8 /* LLClassCollectionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 06910F261D6AD3C400E206B8 /* LLClassCollectionView.swift */; };
@@ -50,6 +57,7 @@
 		06DB0C0A1D67141900F7ABB2 /* YMShareButtonView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 06DB0C091D67141900F7ABB2 /* YMShareButtonView.swift */; };
 		06DB0C0C1D67145C00F7ABB2 /* YMVerticalButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 06DB0C0B1D67145C00F7ABB2 /* YMVerticalButton.swift */; };
 		06DCADCD1D5DD0BA0073F0B3 /* LLTitleModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 06DCADCC1D5DD0BA0073F0B3 /* LLTitleModel.swift */; };
+		06EE90361D6EF51500A90A94 /* LLRegisteController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 06EE90351D6EF51500A90A94 /* LLRegisteController.swift */; };
 		06FC4E2D1D62B83200451970 /* LLChliddrenCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 06FC4E2C1D62B83200451970 /* LLChliddrenCell.swift */; };
 		1D0F3A7218CBDCF030241009 /* Pods___.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DDFD9106D65BAB806BFBE924 /* Pods___.framework */; };
 		B5E24FF21D60854800E30D5C /* LLCarouselModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5E24FF11D60854800E30D5C /* LLCarouselModel.swift */; };
@@ -78,6 +86,13 @@
 		06102AA91D5DB87800D2BBF2 /* UIView+Extension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIView+Extension.swift"; sourceTree = "<group>"; };
 		06102AAB1D5DC18200D2BBF2 /* LLNetWorkTools.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LLNetWorkTools.swift; sourceTree = "<group>"; };
 		0615890D1D62AB31009D58A5 /* LLChidrenModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LLChidrenModel.swift; sourceTree = "<group>"; };
+		0664BE351D6E8F6C0021B193 /* LLCollectionDetailController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LLCollectionDetailController.swift; sourceTree = "<group>"; };
+		0664BE371D6E9B920021B193 /* LLClasDetailCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LLClasDetailCell.swift; sourceTree = "<group>"; };
+		0664BE391D6EC2530021B193 /* LLMoreShowCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LLMoreShowCell.swift; sourceTree = "<group>"; };
+		0664BE3B1D6ED1570021B193 /* LLMeHeadView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LLMeHeadView.swift; sourceTree = "<group>"; };
+		0664BE3D1D6ED79E0021B193 /* LLCustemButton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LLCustemButton.swift; sourceTree = "<group>"; };
+		0664BE3F1D6EE06A0021B193 /* LLMeBottomView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LLMeBottomView.swift; sourceTree = "<group>"; };
+		0664BE431D6EF05E0021B193 /* LLLoginViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LLLoginViewController.swift; sourceTree = "<group>"; };
 		06910F221D6AC84A00E206B8 /* LLClasCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LLClasCell.swift; sourceTree = "<group>"; };
 		06910F241D6ACE4900E206B8 /* LLAdjustButton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LLAdjustButton.swift; sourceTree = "<group>"; };
 		06910F261D6AD3C400E206B8 /* LLClassCollectionView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LLClassCollectionView.swift; sourceTree = "<group>"; };
@@ -122,6 +137,7 @@
 		06DB0C091D67141900F7ABB2 /* YMShareButtonView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = YMShareButtonView.swift; sourceTree = "<group>"; };
 		06DB0C0B1D67145C00F7ABB2 /* YMVerticalButton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = YMVerticalButton.swift; sourceTree = "<group>"; };
 		06DCADCC1D5DD0BA0073F0B3 /* LLTitleModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LLTitleModel.swift; sourceTree = "<group>"; };
+		06EE90351D6EF51500A90A94 /* LLRegisteController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LLRegisteController.swift; sourceTree = "<group>"; };
 		06FC4E2C1D62B83200451970 /* LLChliddrenCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LLChliddrenCell.swift; sourceTree = "<group>"; };
 		3D4D22BD952DBA77680D9363 /* Pods-单糖.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-单糖.debug.xcconfig"; path = "Pods/Target Support Files/Pods-单糖/Pods-单糖.debug.xcconfig"; sourceTree = "<group>"; };
 		B5E24FEA1D6077E600E30D5C /* 单糖-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "单糖-Bridging-Header.h"; sourceTree = "<group>"; };
@@ -161,6 +177,31 @@
 			children = (
 			);
 			path = "代码的重构";
+			sourceTree = "<group>";
+		};
+		0664BE411D6EEE8C0021B193 /* 登录注册 */ = {
+			isa = PBXGroup;
+			children = (
+				0664BE451D6EF14D0021B193 /* View */,
+				0664BE421D6EEE9D0021B193 /* Controller */,
+			);
+			path = "登录注册";
+			sourceTree = "<group>";
+		};
+		0664BE421D6EEE9D0021B193 /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				0664BE431D6EF05E0021B193 /* LLLoginViewController.swift */,
+				06EE90351D6EF51500A90A94 /* LLRegisteController.swift */,
+			);
+			path = Controller;
+			sourceTree = "<group>";
+		};
+		0664BE451D6EF14D0021B193 /* View */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = View;
 			sourceTree = "<group>";
 		};
 		06D1E47C1D5C167700CEBEED = {
@@ -217,6 +258,7 @@
 		06D1E4B61D5C1A3800CEBEED /* 分类 */ = {
 			isa = PBXGroup;
 			children = (
+				0664BE411D6EEE8C0021B193 /* 登录注册 */,
 				06D1E4C71D5C1C7A00CEBEED /* 其他 */,
 				06D1E4BF1D5C1A3800CEBEED /* 单糖 */,
 				06D1E4BB1D5C1A3800CEBEED /* 单品 */,
@@ -240,6 +282,7 @@
 			isa = PBXGroup;
 			children = (
 				06D1E4D01D5C1D4200CEBEED /* LLClassController.swift */,
+				0664BE351D6E8F6C0021B193 /* LLCollectionDetailController.swift */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -260,6 +303,8 @@
 				06910F261D6AD3C400E206B8 /* LLClassCollectionView.swift */,
 				06910F281D6ADC3400E206B8 /* LLProjectCollectionViewCell.swift */,
 				06910F2E1D6AFE5500E206B8 /* LLChannelBootomView.swift */,
+				0664BE371D6E9B920021B193 /* LLClasDetailCell.swift */,
+				0664BE391D6EC2530021B193 /* LLMoreShowCell.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -375,6 +420,9 @@
 		06D1E4C61D5C1A3800CEBEED /* View */ = {
 			isa = PBXGroup;
 			children = (
+				0664BE3B1D6ED1570021B193 /* LLMeHeadView.swift */,
+				0664BE3D1D6ED79E0021B193 /* LLCustemButton.swift */,
+				0664BE3F1D6EE06A0021B193 /* LLMeBottomView.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -616,8 +664,10 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				0664BE3A1D6EC2530021B193 /* LLMoreShowCell.swift in Sources */,
 				06D1E4D11D5C1D4200CEBEED /* LLClassController.swift in Sources */,
 				06DB0C061D66E31700F7ABB2 /* LLItemDetailBottomView.swift in Sources */,
+				0664BE361D6E8F6C0021B193 /* LLCollectionDetailController.swift in Sources */,
 				06DB0BFE1D65B96E00F7ABB2 /* LLItemnCell.swift in Sources */,
 				06AA75961D6444FA0048F3B6 /* LLSearchNavTitleView.swift in Sources */,
 				06DB0BFC1D65B36300F7ABB2 /* LLItemModel.swift in Sources */,
@@ -634,6 +684,7 @@
 				06910F291D6ADC3400E206B8 /* LLProjectCollectionViewCell.swift in Sources */,
 				06910F2B1D6ADD8500E206B8 /* LLProjectModel.swift in Sources */,
 				0615890E1D62AB31009D58A5 /* LLChidrenModel.swift in Sources */,
+				0664BE381D6E9B920021B193 /* LLClasDetailCell.swift in Sources */,
 				06AA758E1D630EDD0048F3B6 /* LLDetailsController.swift in Sources */,
 				06FC4E2D1D62B83200451970 /* LLChliddrenCell.swift in Sources */,
 				06D1E4D51D5C1D7300CEBEED /* LLBaseNavController.swift in Sources */,
@@ -642,7 +693,9 @@
 				06DB0C0C1D67145C00F7ABB2 /* YMVerticalButton.swift in Sources */,
 				06102AA61D5DB38400D2BBF2 /* LLComment.swift in Sources */,
 				06DB0C081D67128500F7ABB2 /* YMActionSheet.swift in Sources */,
+				06EE90361D6EF51500A90A94 /* LLRegisteController.swift in Sources */,
 				06DB0BFA1D65A9A800F7ABB2 /* LLSearchTableViewCell.swift in Sources */,
+				0664BE3C1D6ED1570021B193 /* LLMeHeadView.swift in Sources */,
 				06AA75981D6452ED0048F3B6 /* LLSearchChildrenController.swift in Sources */,
 				06D1E4CB1D5C1CD100CEBEED /* LLBaseController.swift in Sources */,
 				06910F231D6AC84B00E206B8 /* LLClasCell.swift in Sources */,
@@ -651,9 +704,12 @@
 				06910F2F1D6AFE5500E206B8 /* LLChannelBootomView.swift in Sources */,
 				06910F271D6AD3C500E206B8 /* LLClassCollectionView.swift in Sources */,
 				06DCADCD1D5DD0BA0073F0B3 /* LLTitleModel.swift in Sources */,
+				0664BE3E1D6ED79E0021B193 /* LLCustemButton.swift in Sources */,
 				06D1E4891D5C167700CEBEED /* AppDelegate.swift in Sources */,
+				0664BE401D6EE06A0021B193 /* LLMeBottomView.swift in Sources */,
 				06102AAC1D5DC18200D2BBF2 /* LLNetWorkTools.swift in Sources */,
 				06DB0C021D669A1B00F7ABB2 /* LLPhotoShowView.swift in Sources */,
+				0664BE441D6EF05E0021B193 /* LLLoginViewController.swift in Sources */,
 				06910F251D6ACE4900E206B8 /* LLAdjustButton.swift in Sources */,
 				06AA75941D6443D30048F3B6 /* LLSearchController.swift in Sources */,
 				B5E24FF21D60854800E30D5C /* LLCarouselModel.swift in Sources */,

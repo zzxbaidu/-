@@ -43,17 +43,41 @@ class LLChannelBootomView: UIView {
     }
           // MARK: ---- 添加 UI 数据
     private func setupUI() {
+        
+        //顶部背景色
+        let topbgView = UIView()
+        topbgView.backgroundColor = UIColor.redColor()
+        addSubview(topbgView)
+        topbgView.snp_makeConstraints { (make) in
+            make.left.right.equalTo(self)
+            make.top.equalTo(self).offset(12)
+            make.height.equalTo(12)
+        }
+        topbgView.backgroundColor = LLColor(240, g: 240, b: 240, a: 1.0)
+        
+        //取出头部模型数组
+        
+        let topModel =  chanel_Arr[0]
+        
+        //头部标题
+        let nameTopLable = UILabel()
+        addSubview(nameTopLable)
+        nameTopLable.text = topModel.name
+        nameTopLable.snp_makeConstraints { (make) in
+            make.left.equalTo(self).offset(12)
+            make.top.equalTo(topbgView.snp_bottom).offset(15)
+        }
+
+        //头部视图
         let topView = UIView()
         addSubview(topView)
         
         topView.snp_makeConstraints { (make) in
-            make.left.right.top.equalTo(self)
+            make.left.right.equalTo(self)
+            make.top.equalTo(nameTopLable.snp_bottom).offset(12)
             make.height.equalTo(80)
         }
     
-        //取出头部模型数组
-        
-    let topModel =  chanel_Arr[0]
         
     for index in 0..<topModel.channels!.count {
         
@@ -75,8 +99,8 @@ class LLChannelBootomView: UIView {
             button.titleLabel?.font = UIFont.systemFontOfSize(14)
             button.width = buttonW
             button.height = buttonH
-           // button.addTarget(self, action: #selector(shareButtonClick(_:)), forControlEvents: .TouchUpInside)
-            
+            button.addTarget(self, action: #selector(topButtonClick(_:)), forControlEvents: .TouchUpInside)
+        
             // 计算 X、Y
             let row = Int(index / maxCols)
             let col = index % maxCols
@@ -89,10 +113,21 @@ class LLChannelBootomView: UIView {
     }
         
         
+
         
-        
+        //底部背景色
+        let bootombgView = UIView()
+        bootombgView.backgroundColor = UIColor.redColor()
+        addSubview(bootombgView)
+        bootombgView.snp_makeConstraints { (make) in
+            make.left.right.equalTo(self)
+            make.top.equalTo(topView.snp_bottom).offset(30)
+            make.height.equalTo(12)
+        }
+        bootombgView.backgroundColor = LLColor(240, g: 240, b: 240, a: 1.0)
+
+        //底部标题
         let titleLable = UILabel()
-        
         
         let bootomModel =  chanel_Arr[1]
         
@@ -100,11 +135,13 @@ class LLChannelBootomView: UIView {
         
         titleLable.snp_makeConstraints { (make) in
             make.left.equalTo(self).offset(12)
-            make.top.equalTo(topView.snp_bottom).offset(12)
+            make.top.equalTo(bootombgView.snp_bottom).offset(12)
         }
         
         titleLable.text = bootomModel.name
-        //添加底部的 UI
+        
+
+              //添加底部的 UI
 
         let botoomView = UIView()
 
@@ -113,7 +150,7 @@ class LLChannelBootomView: UIView {
         botoomView.snp_makeConstraints { (make) in
             
             make.left.right.bottom.equalTo(self)
-            make.top.equalTo(titleLable.snp_bottom).offset(20)
+            make.top.equalTo(titleLable.snp_bottom).offset(12)
             
         }
 
@@ -138,7 +175,7 @@ class LLChannelBootomView: UIView {
             button.titleLabel?.font = UIFont.systemFontOfSize(14)
             button.width = buttonW
             button.height = buttonH
-            // button.addTarget(self, action: #selector(shareButtonClick(_:)), forControlEvents: .TouchUpInside)
+             button.addTarget(self, action: #selector(bottomButtonClick(_:)), forControlEvents: .TouchUpInside)
             
             // 计算 X、Y
             let row = Int(index / maxCols)
@@ -158,5 +195,27 @@ class LLChannelBootomView: UIView {
     
     required init?(coder aDecoder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
+    }
+    
+          // MARK: ---- 按钮的点击方法
+    
+    @objc private func topButtonClick(btn:UIButton) {
+        
+        let model = (chanel_Arr[0].channels![btn.tag]) as?NSDictionary
+        
+        print(model?.objectForKey("id"))
+        
+        NSNotificationCenter.defaultCenter().postNotificationName(LLStyleNotication, object: model?.objectForKey("id"), userInfo: ["modle":model!])
+    
+    }
+    
+    @objc private func bottomButtonClick(btn:UIButton) {
+        
+        let model = (chanel_Arr[1].channels![btn.tag]) as?NSDictionary
+        
+        print(model?.objectForKey("id"))
+        
+          NSNotificationCenter.defaultCenter().postNotificationName(LLCategoryNotication, object: model?.objectForKey("id"), userInfo:  ["modle":model!])
+        
     }
 }

@@ -39,11 +39,15 @@ class LLItemModel: NSObject {
     
     override func setValue(value: AnyObject?, forKey key: String) {
         
-        super.setValue(value, forKey: key)
+       
         if key == "description" {
            
             descriptio = value as? String
+            
+            return
         }
+        
+         super.setValue(value, forKey: key)
 
     }
     
