@@ -26,6 +26,12 @@
 		06910F2B1D6ADD8500E206B8 /* LLProjectModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 06910F2A1D6ADD8500E206B8 /* LLProjectModel.swift */; };
 		06910F2D1D6AF3C400E206B8 /* LLChannel_groupsModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 06910F2C1D6AF3C400E206B8 /* LLChannel_groupsModel.swift */; };
 		06910F2F1D6AFE5500E206B8 /* LLChannelBootomView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 06910F2E1D6AFE5500E206B8 /* LLChannelBootomView.swift */; };
+		0692810D1D6FE93400CDDB9A /* LLSettingController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0692810C1D6FE93300CDDB9A /* LLSettingController.swift */; };
+		0692810F1D6FEDC600CDDB9A /* LLSettingCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0692810E1D6FEDC600CDDB9A /* LLSettingCell.swift */; };
+		069281111D7017C500CDDB9A /* LLSearchCollectionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 069281101D7017C500CDDB9A /* LLSearchCollectionView.swift */; };
+		069281141D701EB800CDDB9A /* ZZXCollectionViewFlowLayout.m in Sources */ = {isa = PBXBuildFile; fileRef = 069281131D701EB800CDDB9A /* ZZXCollectionViewFlowLayout.m */; };
+		069281161D7024F800CDDB9A /* LLSeachCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 069281151D7024F800CDDB9A /* LLSeachCell.swift */; };
+		069281181D702ADF00CDDB9A /* LLCollectionHeadView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 069281171D702ADF00CDDB9A /* LLCollectionHeadView.swift */; };
 		06AA758E1D630EDD0048F3B6 /* LLDetailsController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 06AA758D1D630EDD0048F3B6 /* LLDetailsController.swift */; };
 		06AA75901D63F6E50048F3B6 /* LLRefreshGifHeader.swift in Sources */ = {isa = PBXBuildFile; fileRef = 06AA758F1D63F6E50048F3B6 /* LLRefreshGifHeader.swift */; };
 		06AA75921D6406710048F3B6 /* LLDetailBootomView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 06AA75911D6406710048F3B6 /* LLDetailBootomView.swift */; };
@@ -100,6 +106,13 @@
 		06910F2A1D6ADD8500E206B8 /* LLProjectModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LLProjectModel.swift; sourceTree = "<group>"; };
 		06910F2C1D6AF3C400E206B8 /* LLChannel_groupsModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LLChannel_groupsModel.swift; sourceTree = "<group>"; };
 		06910F2E1D6AFE5500E206B8 /* LLChannelBootomView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LLChannelBootomView.swift; sourceTree = "<group>"; };
+		0692810C1D6FE93300CDDB9A /* LLSettingController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LLSettingController.swift; sourceTree = "<group>"; };
+		0692810E1D6FEDC600CDDB9A /* LLSettingCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LLSettingCell.swift; sourceTree = "<group>"; };
+		069281101D7017C500CDDB9A /* LLSearchCollectionView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LLSearchCollectionView.swift; sourceTree = "<group>"; };
+		069281121D701EB800CDDB9A /* ZZXCollectionViewFlowLayout.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ZZXCollectionViewFlowLayout.h; sourceTree = "<group>"; };
+		069281131D701EB800CDDB9A /* ZZXCollectionViewFlowLayout.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ZZXCollectionViewFlowLayout.m; sourceTree = "<group>"; };
+		069281151D7024F800CDDB9A /* LLSeachCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LLSeachCell.swift; sourceTree = "<group>"; };
+		069281171D702ADF00CDDB9A /* LLCollectionHeadView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LLCollectionHeadView.swift; sourceTree = "<group>"; };
 		06AA758D1D630EDD0048F3B6 /* LLDetailsController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LLDetailsController.swift; sourceTree = "<group>"; };
 		06AA758F1D63F6E50048F3B6 /* LLRefreshGifHeader.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LLRefreshGifHeader.swift; sourceTree = "<group>"; };
 		06AA75911D6406710048F3B6 /* LLDetailBootomView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LLDetailBootomView.swift; sourceTree = "<group>"; };
@@ -193,6 +206,7 @@
 			children = (
 				0664BE431D6EF05E0021B193 /* LLLoginViewController.swift */,
 				06EE90351D6EF51500A90A94 /* LLRegisteController.swift */,
+				0692810C1D6FE93300CDDB9A /* LLSettingController.swift */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -200,6 +214,7 @@
 		0664BE451D6EF14D0021B193 /* View */ = {
 			isa = PBXGroup;
 			children = (
+				0692810E1D6FEDC600CDDB9A /* LLSettingCell.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -388,6 +403,9 @@
 				06AA75951D6444FA0048F3B6 /* LLSearchNavTitleView.swift */,
 				06DB0BF51D65975E00F7ABB2 /* LLSearchCollectionViewCell.swift */,
 				06DB0BF91D65A9A800F7ABB2 /* LLSearchTableViewCell.swift */,
+				069281101D7017C500CDDB9A /* LLSearchCollectionView.swift */,
+				069281151D7024F800CDDB9A /* LLSeachCell.swift */,
+				069281171D702ADF00CDDB9A /* LLCollectionHeadView.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -447,6 +465,8 @@
 		06D1E4C91D5C1CB800CEBEED /* base */ = {
 			isa = PBXGroup;
 			children = (
+				069281121D701EB800CDDB9A /* ZZXCollectionViewFlowLayout.h */,
+				069281131D701EB800CDDB9A /* ZZXCollectionViewFlowLayout.m */,
 				06102AA41D5DADA300D2BBF2 /* 代码的重构 */,
 				06D1E4CA1D5C1CD100CEBEED /* LLBaseController.swift */,
 				06D1E4D41D5C1D7300CEBEED /* LLBaseNavController.swift */,
@@ -665,18 +685,21 @@
 			buildActionMask = 2147483647;
 			files = (
 				0664BE3A1D6EC2530021B193 /* LLMoreShowCell.swift in Sources */,
+				069281141D701EB800CDDB9A /* ZZXCollectionViewFlowLayout.m in Sources */,
 				06D1E4D11D5C1D4200CEBEED /* LLClassController.swift in Sources */,
 				06DB0C061D66E31700F7ABB2 /* LLItemDetailBottomView.swift in Sources */,
 				0664BE361D6E8F6C0021B193 /* LLCollectionDetailController.swift in Sources */,
 				06DB0BFE1D65B96E00F7ABB2 /* LLItemnCell.swift in Sources */,
 				06AA75961D6444FA0048F3B6 /* LLSearchNavTitleView.swift in Sources */,
 				06DB0BFC1D65B36300F7ABB2 /* LLItemModel.swift in Sources */,
+				069281161D7024F800CDDB9A /* LLSeachCell.swift in Sources */,
 				06AA75921D6406710048F3B6 /* LLDetailBootomView.swift in Sources */,
 				06910F2D1D6AF3C400E206B8 /* LLChannel_groupsModel.swift in Sources */,
 				06DB0C041D669A6D00F7ABB2 /* LLCommentsView.swift in Sources */,
 				06DB0BF81D659BA900F7ABB2 /* LLSearchCollectionModel.swift in Sources */,
 				06102AA81D5DB53600D2BBF2 /* LLChildrenController.swift in Sources */,
 				06D1E4D31D5C1D5400CEBEED /* LLMeController.swift in Sources */,
+				0692810D1D6FE93400CDDB9A /* LLSettingController.swift in Sources */,
 				06D1E4CF1D5C1D2E00CEBEED /* LLItemController.swift in Sources */,
 				06D1E4D71D5C1D8900CEBEED /* LLTabBarController.swift in Sources */,
 				06DB0C0A1D67141900F7ABB2 /* YMShareButtonView.swift in Sources */,
@@ -691,14 +714,17 @@
 				06102AAA1D5DB87800D2BBF2 /* UIView+Extension.swift in Sources */,
 				06DB0C001D65BC6700F7ABB2 /* LLDeatilItemController.swift in Sources */,
 				06DB0C0C1D67145C00F7ABB2 /* YMVerticalButton.swift in Sources */,
+				069281181D702ADF00CDDB9A /* LLCollectionHeadView.swift in Sources */,
 				06102AA61D5DB38400D2BBF2 /* LLComment.swift in Sources */,
 				06DB0C081D67128500F7ABB2 /* YMActionSheet.swift in Sources */,
 				06EE90361D6EF51500A90A94 /* LLRegisteController.swift in Sources */,
 				06DB0BFA1D65A9A800F7ABB2 /* LLSearchTableViewCell.swift in Sources */,
 				0664BE3C1D6ED1570021B193 /* LLMeHeadView.swift in Sources */,
 				06AA75981D6452ED0048F3B6 /* LLSearchChildrenController.swift in Sources */,
+				069281111D7017C500CDDB9A /* LLSearchCollectionView.swift in Sources */,
 				06D1E4CB1D5C1CD100CEBEED /* LLBaseController.swift in Sources */,
 				06910F231D6AC84B00E206B8 /* LLClasCell.swift in Sources */,
+				0692810F1D6FEDC600CDDB9A /* LLSettingCell.swift in Sources */,
 				06DB0BF61D65975E00F7ABB2 /* LLSearchCollectionViewCell.swift in Sources */,
 				06D1E4CD1D5C1D0300CEBEED /* LLHomeController.swift in Sources */,
 				06910F2F1D6AFE5500E206B8 /* LLChannelBootomView.swift in Sources */,

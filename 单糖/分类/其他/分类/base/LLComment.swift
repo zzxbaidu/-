@@ -49,4 +49,5 @@ let  LLStyleNotication = "LLStyleNotication"
 /// 风格的通知
 let  LLCategoryNotication = "LLCategoryNotication"
 
-
+/// 大家都在搜的通知方法
+let  LLOurSeachNotication = "LLOurSeachNotication"

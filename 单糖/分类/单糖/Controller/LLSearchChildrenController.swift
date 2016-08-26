@@ -22,12 +22,6 @@ class LLSearchChildrenController: LLBaseController {
         
         NSNotificationCenter.defaultCenter().addObserver(self, selector: #selector(serachNotifaction(_:)), name: LLSeachNotification, object: nil)
         
-        if childControllerIndex == 0 {
-            
-            setupGoodsUI()
-        }else {
-        setupProjectUI()
-        }
         
         
     }
@@ -55,7 +49,21 @@ class LLSearchChildrenController: LLBaseController {
         
         let key = note.object as? String
         
-        getSearchDate(key!)
+        
+        if key != "" {
+            getSearchDate(key!)
+            
+            
+            if childControllerIndex == 0 {
+                
+                setupGoodsUI()
+            }else {
+                setupProjectUI()
+            }
+
+        }
+        
+       
         
         
     }

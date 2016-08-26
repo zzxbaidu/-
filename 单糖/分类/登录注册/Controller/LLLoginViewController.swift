@@ -10,18 +10,39 @@ import UIKit
 
 class LLLoginViewController: LLBaseController {
 
+    
+    var passWordFiled:UITextField?
     override func viewDidLoad() {
         super.viewDidLoad()
 
         setupUI()
         
         view.backgroundColor = LLColor(240, g: 240, b: 240, a: 1.0)
+        
+          NSNotificationCenter.defaultCenter().addObserver(self, selector: #selector(TextFieldNotification(_:)), name: UITextFieldTextDidChangeNotification, object: nil)
     }
 
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
+    
+    deinit {
+        
+        NSNotificationCenter.defaultCenter().removeObserver(self)
+        
+    }
+    
+    
+    // MARK: ---- 接受通知的方法
+    
+    @objc private func TextFieldNotification(note:NSNotification) {
+        
+        passWordFiled?.text != "" ? (loginButton.backgroundColor = UIColor.redColor()) : (loginButton.backgroundColor = UIColor.brownColor())
+        
+        
+    }
+
        // MARK: ---- 添加 UI 视图
     private func setupUI() {
         
@@ -34,8 +55,7 @@ class LLLoginViewController: LLBaseController {
     weakSelf!.dismissViewControllerAnimated(true, completion: nil)
     }else {
         
-     
-    
+     self.presentViewController(LLRegisteController(), animated: true, completion: nil)
     
     }
         }
@@ -87,6 +107,8 @@ class LLLoginViewController: LLBaseController {
         
         //密码
         let passWordFild = UITextField()
+        
+        passWordFiled = passWordFild
         contenView.addSubview(passWordFild)
         passWordFild.placeholder = "密码"
         passWordFild.snp_makeConstraints { (make) in
@@ -185,7 +207,7 @@ class LLLoginViewController: LLBaseController {
         
         let btn = UIButton(type: .Custom)
         btn.setTitle("登录", forState: . Normal)
-        btn.backgroundColor = UIColor.redColor()
+        btn.backgroundColor = UIColor.brownColor()
         btn.setTitleColor(UIColor.whiteColor(), forState: .Normal)
         btn.layer.masksToBounds = true
         btn.layer.cornerRadius = 7

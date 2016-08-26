@@ -13,7 +13,7 @@ class LLMeController: LLBaseController {
     override func viewDidLoad() {
         super.viewDidLoad()
 
-    self.navigationController?.navigationBar.hidden = true
+   
         
         setupUI()
     }
@@ -21,6 +21,12 @@ class LLMeController: LLBaseController {
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
+    }
+    
+    override func viewWillAppear(animated: Bool) {
+        super.viewWillAppear(animated)
+        
+         self.navigationController?.navigationBar.hidden = true
     }
     
           // MARK: ---- 添加子视图
@@ -129,7 +135,7 @@ class LLMeController: LLBaseController {
             botomView.frame = CGRect(x: CGFloat (index) * SCREEN_WITH, y: 0, width: SCREEN_WITH, height: SCREEN_HEIGHT - 210 - 44)
         }
         
-
+      
   
     }
     // MARK: ---- 切换按钮的点击方法
@@ -143,6 +149,8 @@ class LLMeController: LLBaseController {
         let offSet = CGPoint(x: offSetX, y: offSetY)
         
         contentScroll.setContentOffset(offSet, animated: true)
+        
+       
         
     }
 
@@ -160,9 +168,11 @@ class LLMeController: LLBaseController {
             
             }else if btn.tag == 2 {
                 
-                weakSelf!.presentViewController(LLLoginViewController(), animated: true, completion: nil)
+                weakSelf!.presentViewController(  LLSettingController(style: .Grouped), animated: true, completion: nil)
             
             }else {
+                
+               weakSelf!.navigationController?.pushViewController(LLSettingController(), animated: true)
             
             }
         })

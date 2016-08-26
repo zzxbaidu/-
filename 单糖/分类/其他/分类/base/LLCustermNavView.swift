@@ -77,7 +77,7 @@ class LLCustermNavView: UIView {
                 rightBtn.tag = 2
                 rightBtn.setTitle("注册", forState: .Normal)
                 rightBtn.setTitleColor(UIColor.whiteColor(), forState: .Normal)
-                 rightBtn.addTarget(self, action: #selector(LLCustermNavView.leftButtonClick), forControlEvents: .TouchUpInside)
+                 rightBtn.addTarget(self, action: #selector(btnClick(_:)), forControlEvents: .TouchUpInside)
                 
                 addSubview(rightBtn)
                 rightBtn.snp_makeConstraints(closure: { (make) in
@@ -97,7 +97,7 @@ class LLCustermNavView: UIView {
         
         let btn = UIButton(type:.Custom)
         
-        btn.addTarget(self, action: #selector(LLCustermNavView.leftButtonClick), forControlEvents: .TouchUpInside)
+        btn.addTarget(self, action: #selector(btnClick(_:)), forControlEvents: .TouchUpInside)
         if self.typeMe != 4 {
             let backImageView = UIImageView(image: UIImage(named: "checkUserType_backward_9x15_"))
             btn.addSubview(backImageView)
@@ -119,10 +119,10 @@ class LLCustermNavView: UIView {
     }()
     
           // MARK: ---- 按钮的点击方法
-    @objc private func  leftButtonClick() {
+    @objc private func  btnClick(btn:UIButton) {
         
-        print("-----")
-    buttonClick!(leftButton: backButton)
+    
+    buttonClick!(leftButton: btn)
     
     }
     

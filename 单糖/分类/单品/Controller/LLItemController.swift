@@ -22,6 +22,8 @@ class LLItemController: LLBaseController {
         super.viewDidLoad()
     loadDate()
       setupUI()
+        
+        
     }
 
     override func didReceiveMemoryWarning() {

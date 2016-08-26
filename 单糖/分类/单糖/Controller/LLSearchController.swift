@@ -6,6 +6,9 @@
 //  Copyright © 2016年 周尊贤. All rights reserved.
 //
 
+
+
+
 import UIKit
 import SVProgressHUD
 class LLSearchController: LLBaseController {
@@ -17,17 +20,23 @@ class LLSearchController: LLBaseController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        view.backgroundColor = UIColor.whiteColor()
-
+     view.backgroundColor = UIColor.whiteColor()
+     
+     automaticallyAdjustsScrollViewInsets = false
         
+        navigationItem.rightBarButtonItem = UIBarButtonItem(title: "取消", style: .Plain, target: self, action:  #selector(rightItenClick))
+        
+        navigationItem.rightBarButtonItem?.tintColor = UIColor.whiteColor()
       navigationItem.titleView = LLSearchNavTitleView(frame: CGRect(x: 50, y: 0, width: SCREEN_WITH - 100, height: 35), block: { (searchField) in
         
-        self.rightSearchClick(searchField.text!)
-        
-        self.serchStr = searchField.text
+      self.rightSearchClick(searchField.text!)
       })
         
-        setupUI()
+        view.addSubview(serachTabView)
+        
+        serachTabView.hidden = false
+        
+        NSNotificationCenter.defaultCenter().addObserver(self, selector: #selector(ourSeach(_:)), name: LLOurSeachNotication, object: nil)
 
     }
     
@@ -35,27 +44,77 @@ class LLSearchController: LLBaseController {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
-          // MARK: ---- 搜索 按钮的点击方法 (有 bug)
+    
+    
+          // MARK: ---- 取消按钮的点击方法
+    
+    @objc private func rightItenClick() {
+    
+    self.navigationController?.popViewControllerAnimated(true)
+    }
+    
+    
+          // MARK: ---- 大家都在搜的通知
+    @objc private func ourSeach(note:NSNotification) {
+        
+       print(note.object)
+        
+        
+         serchStr = note.object as?String
+        
+        rightSearchClick(note.object as! NSString)
+        
+        
+    
+    }
+    
     @objc private func rightSearchClick(searchName:NSString) {
         
-         guard !searchName.isEqualToString("") else
-           {
-      let aleterView = UIAlertView(title: "温馨提示", message: "搜索的关键字不能为空", delegate:  nil, cancelButtonTitle: "确定")
-         aleterView.show()
-            return
+          serchStr = searchName as String
+        if searchName.isEqualToString("") {
             
-            }
-           NSNotificationCenter.defaultCenter().postNotificationName(LLSeachNotification, object: searchName)
+           bgView.hidden = true
+            
+            view.addSubview(serachTabView)
+            serachTabView.hidden = false
+            
+            
+        }else {
+            
+            serachTabView.removeFromSuperview()
+            serachTabView.hidden = true
+            bgView.hidden = false
+          
+            
+          
+        
+             setupUI()
+            
+            
+             NSNotificationCenter.defaultCenter().postNotificationName(LLSeachNotification, object: searchName)
+            
+        }
         
     }
+    
     
           // MARK: ---- 添加 UI 控件
     
     private func setupUI() {
         
+        tempTitleArr.removeAllObjects()
         
-        view.addSubview(titleView)
-        view.addSubview(contentScroll)
+        for v in titleView.subviews {
+            
+            v.removeFromSuperview()
+            
+        }
+        
+        bgView.frame = view.bounds
+        view.addSubview(bgView)
+        
+        bgView.addSubview(titleView)
+        bgView.addSubview(contentScroll)
               
         //添加titleScroll中间的分割线
         
@@ -131,7 +190,7 @@ class LLSearchController: LLBaseController {
         titleView.addSubview(indicatorView)
         
         
-        
+      
         
 
     
@@ -152,6 +211,19 @@ class LLSearchController: LLBaseController {
     }
 
           // MARK: ---- 懒加载
+    
+    
+    private lazy var serachTabView:LLSearchCollectionView = {
+    
+  let layout = ZZXCollectionViewFlowLayout()
+        let seachView = LLSearchCollectionView(frame: CGRect(x: 0, y: 64, width: SCREEN_WITH, height: SCREEN_HEIGHT - 64), collectionViewLayout: layout)
+      
+        return seachView
+    
+    }()
+    
+    private lazy var bgView = UIView()
+
     private lazy var titleView:UIView = {
         
         let titleScr = UIView(frame: CGRect(x: 0, y: 64, width: SCREEN_WITH, height: 44))
@@ -231,6 +303,8 @@ extension LLSearchController :UIScrollViewDelegate {
         contentScroll.addSubview(Vc!.view)
         
         Vc?.childControllerIndex = Int(index)
+          Vc!.view.frame = scrollView.bounds
+        
         
         //请求专题的数据
         if index == 1 {
@@ -240,17 +314,14 @@ extension LLSearchController :UIScrollViewDelegate {
             }
            Vc?.getSearchDate(seachString)
         }
-        Vc!.view.frame = scrollView.bounds
+      
         
         
   
     }
     
   
-//    func scrollViewDidEndScrollingAnimation(scrollView: UIScrollView) {
-//        
-//        
-//    }
+
     
     func scrollViewDidEndDecelerating(scrollView: UIScrollView) {
         

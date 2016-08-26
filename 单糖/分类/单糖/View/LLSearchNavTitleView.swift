@@ -35,8 +35,8 @@ class LLSearchNavTitleView: UIView {
           // MARK: ---- 接收UITextField的通知方法
     
     @objc private func textFieldNotifaction(note:NSNotification) {
-        
-        
+    
+        searchCallBack!(searchField: searchField)
               
         
     }
@@ -93,8 +93,7 @@ extension LLSearchNavTitleView:UITextFieldDelegate {
 
     
     func textFieldShouldReturn(textField: UITextField) -> Bool {
-       textField.resignFirstResponder()
-        searchCallBack!(searchField: textField)
+       
         return true
     }
 

@@ -48,8 +48,8 @@ class LLItemnCell: UICollectionViewCell {
         contentView.layer.cornerRadius = 7
         contentView.backgroundColor = UIColor.whiteColor()
         
-        contentView.layer.borderWidth = 1
-        contentView.layer.borderColor = UIColor.darkGrayColor().CGColor
+        contentView.layer.borderWidth = 1.8
+        contentView.layer.borderColor = LLColor(240, g: 240, b: 240, a: 1.0).CGColor
     }
     
     required init?(coder aDecoder: NSCoder) {
@@ -85,6 +85,7 @@ class LLItemnCell: UICollectionViewCell {
         likeButton.snp_makeConstraints { (make) in
             make.top.equalTo(priceLable.snp_top)
             make.right.equalTo(titleLable.snp_right)
+            
         }
         
         
@@ -121,10 +122,10 @@ class LLItemnCell: UICollectionViewCell {
         
         btn.setImage(UIImage(named: "Search_GiftBtn_Selected_12x10_"), forState: .Highlighted)
         
-        // btn.setImageEdgeInsets:UIEdgeInsetsMake(0.0, -20, 0.0, 0.0)
+        btn.imageEdgeInsets = UIEdgeInsets(top: 0, left: -10, bottom: 0, right: 0)
         
-        
-        btn.contentEdgeInsets =  UIEdgeInsetsMake(0,0, 0, 5);
+                
+      
         return btn
     }()
 
