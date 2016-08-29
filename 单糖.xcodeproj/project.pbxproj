@@ -19,6 +19,9 @@
 		0664BE3E1D6ED79E0021B193 /* LLCustemButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0664BE3D1D6ED79E0021B193 /* LLCustemButton.swift */; };
 		0664BE401D6EE06A0021B193 /* LLMeBottomView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0664BE3F1D6EE06A0021B193 /* LLMeBottomView.swift */; };
 		0664BE441D6EF05E0021B193 /* LLLoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0664BE431D6EF05E0021B193 /* LLLoginViewController.swift */; };
+		0683DC9B1D73DCD8006D01FD /* LLNewFeaturesController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0683DC9A1D73DCD8006D01FD /* LLNewFeaturesController.swift */; };
+		0683DC9E1D73DCDF006D01FD /* AdvertiseView.m in Sources */ = {isa = PBXBuildFile; fileRef = 0683DC9D1D73DCDF006D01FD /* AdvertiseView.m */; };
+		0683DCA31D740418006D01FD /* LLDownLoadImage.m in Sources */ = {isa = PBXBuildFile; fileRef = 0683DCA21D740418006D01FD /* LLDownLoadImage.m */; };
 		06910F231D6AC84B00E206B8 /* LLClasCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 06910F221D6AC84A00E206B8 /* LLClasCell.swift */; };
 		06910F251D6ACE4900E206B8 /* LLAdjustButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 06910F241D6ACE4900E206B8 /* LLAdjustButton.swift */; };
 		06910F271D6AD3C500E206B8 /* LLClassCollectionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 06910F261D6AD3C400E206B8 /* LLClassCollectionView.swift */; };
@@ -99,6 +102,11 @@
 		0664BE3D1D6ED79E0021B193 /* LLCustemButton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LLCustemButton.swift; sourceTree = "<group>"; };
 		0664BE3F1D6EE06A0021B193 /* LLMeBottomView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LLMeBottomView.swift; sourceTree = "<group>"; };
 		0664BE431D6EF05E0021B193 /* LLLoginViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LLLoginViewController.swift; sourceTree = "<group>"; };
+		0683DC9A1D73DCD8006D01FD /* LLNewFeaturesController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = LLNewFeaturesController.swift; path = "../../广告控制器/Controller/LLNewFeaturesController.swift"; sourceTree = "<group>"; };
+		0683DC9C1D73DCDF006D01FD /* AdvertiseView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AdvertiseView.h; sourceTree = "<group>"; };
+		0683DC9D1D73DCDF006D01FD /* AdvertiseView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AdvertiseView.m; sourceTree = "<group>"; };
+		0683DCA11D740418006D01FD /* LLDownLoadImage.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LLDownLoadImage.h; sourceTree = "<group>"; };
+		0683DCA21D740418006D01FD /* LLDownLoadImage.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LLDownLoadImage.m; sourceTree = "<group>"; };
 		06910F221D6AC84A00E206B8 /* LLClasCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LLClasCell.swift; sourceTree = "<group>"; };
 		06910F241D6ACE4900E206B8 /* LLAdjustButton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LLAdjustButton.swift; sourceTree = "<group>"; };
 		06910F261D6AD3C400E206B8 /* LLClassCollectionView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LLClassCollectionView.swift; sourceTree = "<group>"; };
@@ -219,6 +227,55 @@
 			path = View;
 			sourceTree = "<group>";
 		};
+		0683DC941D73DC5D006D01FD /* 新特性 */ = {
+			isa = PBXGroup;
+			children = (
+				0683DC951D73DC5D006D01FD /* Controller */,
+				0683DC961D73DC5D006D01FD /* View */,
+			);
+			path = "新特性";
+			sourceTree = "<group>";
+		};
+		0683DC951D73DC5D006D01FD /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				0683DC9A1D73DCD8006D01FD /* LLNewFeaturesController.swift */,
+			);
+			path = Controller;
+			sourceTree = "<group>";
+		};
+		0683DC961D73DC5D006D01FD /* View */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		0683DC971D73DCB8006D01FD /* 广告控制器 */ = {
+			isa = PBXGroup;
+			children = (
+				0683DC981D73DCB8006D01FD /* Controller */,
+				0683DC991D73DCB8006D01FD /* View */,
+			);
+			path = "广告控制器";
+			sourceTree = "<group>";
+		};
+		0683DC981D73DCB8006D01FD /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Controller;
+			sourceTree = "<group>";
+		};
+		0683DC991D73DCB8006D01FD /* View */ = {
+			isa = PBXGroup;
+			children = (
+				0683DC9C1D73DCDF006D01FD /* AdvertiseView.h */,
+				0683DC9D1D73DCDF006D01FD /* AdvertiseView.m */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
 		06D1E47C1D5C167700CEBEED = {
 			isa = PBXGroup;
 			children = (
@@ -273,6 +330,8 @@
 		06D1E4B61D5C1A3800CEBEED /* 分类 */ = {
 			isa = PBXGroup;
 			children = (
+				0683DC971D73DCB8006D01FD /* 广告控制器 */,
+				0683DC941D73DC5D006D01FD /* 新特性 */,
 				0664BE411D6EEE8C0021B193 /* 登录注册 */,
 				06D1E4C71D5C1C7A00CEBEED /* 其他 */,
 				06D1E4BF1D5C1A3800CEBEED /* 单糖 */,
@@ -465,6 +524,8 @@
 		06D1E4C91D5C1CB800CEBEED /* base */ = {
 			isa = PBXGroup;
 			children = (
+				0683DCA11D740418006D01FD /* LLDownLoadImage.h */,
+				0683DCA21D740418006D01FD /* LLDownLoadImage.m */,
 				069281121D701EB800CDDB9A /* ZZXCollectionViewFlowLayout.h */,
 				069281131D701EB800CDDB9A /* ZZXCollectionViewFlowLayout.m */,
 				06102AA41D5DADA300D2BBF2 /* 代码的重构 */,
@@ -690,6 +751,7 @@
 				06DB0C061D66E31700F7ABB2 /* LLItemDetailBottomView.swift in Sources */,
 				0664BE361D6E8F6C0021B193 /* LLCollectionDetailController.swift in Sources */,
 				06DB0BFE1D65B96E00F7ABB2 /* LLItemnCell.swift in Sources */,
+				0683DC9E1D73DCDF006D01FD /* AdvertiseView.m in Sources */,
 				06AA75961D6444FA0048F3B6 /* LLSearchNavTitleView.swift in Sources */,
 				06DB0BFC1D65B36300F7ABB2 /* LLItemModel.swift in Sources */,
 				069281161D7024F800CDDB9A /* LLSeachCell.swift in Sources */,
@@ -701,6 +763,7 @@
 				06D1E4D31D5C1D5400CEBEED /* LLMeController.swift in Sources */,
 				0692810D1D6FE93400CDDB9A /* LLSettingController.swift in Sources */,
 				06D1E4CF1D5C1D2E00CEBEED /* LLItemController.swift in Sources */,
+				0683DCA31D740418006D01FD /* LLDownLoadImage.m in Sources */,
 				06D1E4D71D5C1D8900CEBEED /* LLTabBarController.swift in Sources */,
 				06DB0C0A1D67141900F7ABB2 /* YMShareButtonView.swift in Sources */,
 				06AA75901D63F6E50048F3B6 /* LLRefreshGifHeader.swift in Sources */,
@@ -717,6 +780,7 @@
 				069281181D702ADF00CDDB9A /* LLCollectionHeadView.swift in Sources */,
 				06102AA61D5DB38400D2BBF2 /* LLComment.swift in Sources */,
 				06DB0C081D67128500F7ABB2 /* YMActionSheet.swift in Sources */,
+				0683DC9B1D73DCD8006D01FD /* LLNewFeaturesController.swift in Sources */,
 				06EE90361D6EF51500A90A94 /* LLRegisteController.swift in Sources */,
 				06DB0BFA1D65A9A800F7ABB2 /* LLSearchTableViewCell.swift in Sources */,
 				0664BE3C1D6ED1570021B193 /* LLMeHeadView.swift in Sources */,

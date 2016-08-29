@@ -28,18 +28,46 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         manager.shouldToolbarUsesTextFieldTintColor = true
         manager.enableAutoToolbar = true
         window = UIWindow(frame:UIScreen.mainScreen().bounds)
-        
-        let tabBarVc = LLTabBarController()
-       
-        window?.rootViewController = tabBarVc
-        
         window?.makeKeyAndVisible()
         
+        //获取当前的版本号和上次存储的进行对比
+        let isFristOpenApp = LLDownLoadImage.share().isFristStratApp()
+        if isFristOpenApp {
+            
+            let newFeaturesVc = LLNewFeaturesController()
+            
+            self.window?.rootViewController = newFeaturesVc
+            
+        }else {
+            
+        let tabBarVc = LLTabBarController()
+        self.window?.rootViewController = tabBarVc
+                
+            }
+
+        //获取沙河文件
+        let imgeString = NSUserDefaults.standardUserDefaults().valueForKey("adImageName")as! String?//objectForKey("adImageName") as! String!
+        
+        let filePath = LLDownLoadImage.share().getFilePathWithImageName(imgeString)
+        
+        let isExist = LLDownLoadImage.share().isFileExistWithFilePath(filePath)
+        if isExist { //图片存在
+            
+            let advertiseView = AdvertiseView(frame: self.window!.bounds)
+            advertiseView.filePath = filePath
+            advertiseView.show()
+        }
+        
+        //无论沙河中是否存在,都需要调用新的广告接口
+        LLDownLoadImage.share().getAdvertisingImage()
+
+
         return true
         
+       
         
     }
-
+        
     func applicationWillResignActive(application: UIApplication) {
         // Sent when the application is about to move from active to inactive state. This can occur for certain types of temporary interruptions (such as an incoming phone call or SMS message) or when the user quits the application and it begins the transition to the background state.
         // Use this method to pause ongoing tasks, disable timers, and throttle down OpenGL ES frame rates. Games should use this method to pause the game.

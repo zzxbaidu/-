@@ -37,7 +37,8 @@ let kYMMineHeaderImageHeight: CGFloat = 200
 // 分享按钮背景高度
 let kTopViewH: CGFloat = 230
 
-
+/// 常用的颜色
+let LLColor = UIColor(colorLiteralRed: 235/255, green: 114/255, blue: 118/255, alpha: 1)
 /// 专题合集的通知
 let  LLSpecialCollectionNotication = "specialCollectionNotication"
 
@@ -51,3 +52,7 @@ let  LLCategoryNotication = "LLCategoryNotication"
 
 /// 大家都在搜的通知方法
 let  LLOurSeachNotication = "LLOurSeachNotication"
+
+
+/// 切换跟控制器的通知
+let LLSwithWindowRootVc = "SwithWindowRootVc"
