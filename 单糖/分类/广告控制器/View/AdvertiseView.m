@@ -73,7 +73,7 @@ static int const showtime = 3;
     
     [self dismiss];
     
-    [[NSNotificationCenter defaultCenter] postNotificationName:@"pushtoad" object:nil userInfo:nil];
+   // [[NSNotificationCenter defaultCenter] postNotificationName:@"pushtoad" object:nil userInfo:nil];
 }
 
 - (void)countDown
@@ -134,15 +134,43 @@ static int const showtime = 3;
 // 移除广告页面
 - (void)dismiss
 {
-    [UIView animateWithDuration:0.3f animations:^{
+    
+    
+    [UIImageView animateWithDuration:2.0 animations:^{
+        self.adView.transform = CGAffineTransformMakeScale(1.2, 1.2);
+        self.adView.alpha = 0;
 
-        self.alpha = 0.f;
     } completion:^(BOOL finished) {
-        [self removeFromSuperview];
-
+         [self removeFromSuperview];
     }];
+    
+    
+//    [UIView animateWithDuration:0.3f animations:^{
+//
+//        self.alpha = 0.f;
+//    } completion:^(BOOL finished) {
+//        [self removeFromSuperview];
+//
+//    }];
+    
+   
+    
+
 
 }
+
+/*
+ 
+ UIImageView.animateWithDuration(2.0, animations: { () -> Void in
+ tmpSelf!.adImageView!.transform = CGAffineTransformMakeScale(1.2, 1.2)
+ tmpSelf!.adImageView!.alpha = 0
+ }) { (finsch) -> Void in
+ tmpSelf!.adImageView!.removeFromSuperview()
+ tmpSelf!.adImageView = nil
+ }
+
+ 
+ */
 
 
 @end

@@ -27,7 +27,7 @@ class LLSearchCollectionView: UICollectionView {
         
         loadDate()
         
-  backgroundColor = UIColor.whiteColor()
+      backgroundColor = UIColor.whiteColor()
     }
     
     required init?(coder aDecoder: NSCoder) {

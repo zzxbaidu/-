@@ -130,6 +130,7 @@ extension LLChildrenController {
     }
     override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
         
+        
         let cell = tableView.dequeueReusableCellWithIdentifier(cellIdentifier, forIndexPath: indexPath) as?LLChliddrenCell
         
         let model = childrenArr[indexPath.row]

@@ -16,6 +16,10 @@ class LLTabBarController: UITabBarController {
         // Do any additional setup after loading the view.
         addChildViewControllers()
         tabBar.tintColor = UIColor.redColor()
+        
+        
+        selectedViewController = childViewControllers[2]
+        
     }
 
     override func didReceiveMemoryWarning() {
