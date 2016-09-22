@@ -16,6 +16,8 @@ class LLSearchController: LLBaseController {
     let visualCount = 2
     
     var serchStr:String?
+    
+    
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -32,19 +34,61 @@ class LLSearchController: LLBaseController {
       self.rightSearchClick(searchField.text!)
       })
         
-        view.addSubview(serachTabView)
-        
-        serachTabView.hidden = false
+//        view.addSubview(serachTabView)
+//        
+//        serachTabView.hidden = false
         
         NSNotificationCenter.defaultCenter().addObserver(self, selector: #selector(ourSeach(_:)), name: LLOurSeachNotication, object: nil)
+        
+        
+        loadDate()
 
+    }
+    
+    override func viewWillAppear(animated: Bool) {
+        super.viewWillAppear(animated)
+//        
+      // serachView.loadHistorySearchButtonData()
+//       guard  let arr = NSUserDefaults.standardUserDefaults().objectForKey("historySearchArray") as? NSArray
+//        else {
+//            
+//            return
+//        
+//        }
+//        if arr.count > 0 {
+//            serachView.delectHistory()
+//        }
     }
     
        override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
-    
+    private func loadDate() {
+        
+        let urlString = baseUrl + "v1/search/hot_words?"
+        
+        LLNetWorkTools.sharedTools.loadGETDate(urlString, param: "") { (backDate) in
+            
+            let dataDict = ( backDate as? NSDictionary)?.objectForKey("data") as? NSDictionary
+            
+            
+            guard let hot_wordsArr = dataDict?.objectForKey("hot_words") as? NSArray else {
+                return
+            }
+            
+            self.hot_wordsArr = NSMutableArray(array: hot_wordsArr)
+            
+            self.view.addSubview(self.serachView)
+            
+           self.serachView.frame = self.view.bounds
+            
+           
+        }
+        
+        
+    }
+
     
           // MARK: ---- 取消按钮的点击方法
     
@@ -73,22 +117,21 @@ class LLSearchController: LLBaseController {
           serchStr = searchName as String
         if searchName.isEqualToString("") {
             
-           bgView.hidden = true
-            
-            view.addSubview(serachTabView)
-            serachTabView.hidden = false
+      //     bgView.hidden = true
+            serachView.hidden = false
+
+//            view.addSubview(serachTabView)
+//            serachTabView.hidden = false
             
             
         }else {
-            
-            serachTabView.removeFromSuperview()
-            serachTabView.hidden = true
+            serachView.hidden = true
+
+//            serachTabView.removeFromSuperview()
+//            serachTabView.hidden = true
             bgView.hidden = false
-          
-            
-          
-        
-             setupUI()
+
+            setupUI()
             
             
              NSNotificationCenter.defaultCenter().postNotificationName(LLSeachNotification, object: searchName)
@@ -99,7 +142,7 @@ class LLSearchController: LLBaseController {
     
     
           // MARK: ---- 添加 UI 控件
-    
+
     private func setupUI() {
         
         tempTitleArr.removeAllObjects()
@@ -211,17 +254,32 @@ class LLSearchController: LLBaseController {
     }
 
           // MARK: ---- 懒加载
-    
-    
-    private lazy var serachTabView:LLSearchCollectionView = {
-    
-  let layout = ZZXCollectionViewFlowLayout()
-        let seachView = LLSearchCollectionView(frame: CGRect(x: 0, y: 64, width: SCREEN_WITH, height: SCREEN_HEIGHT - 64), collectionViewLayout: layout)
-      
-        return seachView
+    private lazy var hot_wordsArr:NSMutableArray = NSMutableArray(capacity: 1)
+    private lazy var serachView:LLSeachScrollView = {
+        
+        let search = LLSeachScrollView(frame: CGRectZero, self.hot_wordsArr as [AnyObject], { (btn) in
+            if btn.tag == 100 {
+                
+                 NSNotificationCenter.defaultCenter().postNotificationName(LLOurSeachNotication, object: btn.titleLabel!.text)
+            
+            }else {
+                 NSNotificationCenter.defaultCenter().postNotificationName(LLOurSeachNotication, object: btn.titleLabel!.text)
+            
+            }
+        })
+        
+        return search
     
     }()
-    
+//    private lazy var serachTabView:LLSearchCollectionView = {
+//    
+//  let layout = ZZXCollectionViewFlowLayout()
+//        let seachView = LLSearchCollectionView(frame: CGRect(x: 0, y: 64, width: SCREEN_WITH, height: SCREEN_HEIGHT - 64), collectionViewLayout: layout)
+//      
+//        return seachView
+//    
+//    }()
+//    
     private lazy var bgView = UIView()
 
     private lazy var titleView:UIView = {

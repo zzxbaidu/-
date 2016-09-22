@@ -18,7 +18,7 @@ class LLTabBarController: UITabBarController {
         tabBar.tintColor = UIColor.redColor()
         
         
-        selectedViewController = childViewControllers[2]
+      
         
     }
 

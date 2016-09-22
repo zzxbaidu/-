@@ -5,3 +5,4 @@
 #import "ZZXCollectionViewFlowLayout.h"
 #import "LLDownLoadImage.h"
 #import "AdvertiseView.h"
+#import "LLSeachScrollView.h"

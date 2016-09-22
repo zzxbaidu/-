@@ -35,6 +35,8 @@
 		069281141D701EB800CDDB9A /* ZZXCollectionViewFlowLayout.m in Sources */ = {isa = PBXBuildFile; fileRef = 069281131D701EB800CDDB9A /* ZZXCollectionViewFlowLayout.m */; };
 		069281161D7024F800CDDB9A /* LLSeachCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 069281151D7024F800CDDB9A /* LLSeachCell.swift */; };
 		069281181D702ADF00CDDB9A /* LLCollectionHeadView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 069281171D702ADF00CDDB9A /* LLCollectionHeadView.swift */; };
+		069DDE931D87E09100C9122F /* LLSeachScrollView.m in Sources */ = {isa = PBXBuildFile; fileRef = 069DDE901D87E09100C9122F /* LLSeachScrollView.m */; };
+		069DDE941D87E09100C9122F /* LLSearchView.m in Sources */ = {isa = PBXBuildFile; fileRef = 069DDE921D87E09100C9122F /* LLSearchView.m */; };
 		06AA758E1D630EDD0048F3B6 /* LLDetailsController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 06AA758D1D630EDD0048F3B6 /* LLDetailsController.swift */; };
 		06AA75901D63F6E50048F3B6 /* LLRefreshGifHeader.swift in Sources */ = {isa = PBXBuildFile; fileRef = 06AA758F1D63F6E50048F3B6 /* LLRefreshGifHeader.swift */; };
 		06AA75921D6406710048F3B6 /* LLDetailBootomView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 06AA75911D6406710048F3B6 /* LLDetailBootomView.swift */; };
@@ -121,6 +123,10 @@
 		069281131D701EB800CDDB9A /* ZZXCollectionViewFlowLayout.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ZZXCollectionViewFlowLayout.m; sourceTree = "<group>"; };
 		069281151D7024F800CDDB9A /* LLSeachCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LLSeachCell.swift; sourceTree = "<group>"; };
 		069281171D702ADF00CDDB9A /* LLCollectionHeadView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LLCollectionHeadView.swift; sourceTree = "<group>"; };
+		069DDE8F1D87E09100C9122F /* LLSeachScrollView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LLSeachScrollView.h; sourceTree = "<group>"; };
+		069DDE901D87E09100C9122F /* LLSeachScrollView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LLSeachScrollView.m; sourceTree = "<group>"; };
+		069DDE911D87E09100C9122F /* LLSearchView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LLSearchView.h; sourceTree = "<group>"; };
+		069DDE921D87E09100C9122F /* LLSearchView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LLSearchView.m; sourceTree = "<group>"; };
 		06AA758D1D630EDD0048F3B6 /* LLDetailsController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LLDetailsController.swift; sourceTree = "<group>"; };
 		06AA758F1D63F6E50048F3B6 /* LLRefreshGifHeader.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LLRefreshGifHeader.swift; sourceTree = "<group>"; };
 		06AA75911D6406710048F3B6 /* LLDetailBootomView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LLDetailBootomView.swift; sourceTree = "<group>"; };
@@ -524,6 +530,10 @@
 		06D1E4C91D5C1CB800CEBEED /* base */ = {
 			isa = PBXGroup;
 			children = (
+				069DDE8F1D87E09100C9122F /* LLSeachScrollView.h */,
+				069DDE901D87E09100C9122F /* LLSeachScrollView.m */,
+				069DDE911D87E09100C9122F /* LLSearchView.h */,
+				069DDE921D87E09100C9122F /* LLSearchView.m */,
 				0683DCA11D740418006D01FD /* LLDownLoadImage.h */,
 				0683DCA21D740418006D01FD /* LLDownLoadImage.m */,
 				069281121D701EB800CDDB9A /* ZZXCollectionViewFlowLayout.h */,
@@ -633,6 +643,7 @@
 				TargetAttributes = {
 					06D1E4841D5C167700CEBEED = {
 						CreatedOnToolsVersion = 7.3.1;
+						DevelopmentTeam = N9EV8487M2;
 						LastSwiftMigration = 0800;
 					};
 					06D1E4981D5C167700CEBEED = {
@@ -753,6 +764,7 @@
 				06DB0BFE1D65B96E00F7ABB2 /* LLItemnCell.swift in Sources */,
 				0683DC9E1D73DCDF006D01FD /* AdvertiseView.m in Sources */,
 				06AA75961D6444FA0048F3B6 /* LLSearchNavTitleView.swift in Sources */,
+				069DDE941D87E09100C9122F /* LLSearchView.m in Sources */,
 				06DB0BFC1D65B36300F7ABB2 /* LLItemModel.swift in Sources */,
 				069281161D7024F800CDDB9A /* LLSeachCell.swift in Sources */,
 				06AA75921D6406710048F3B6 /* LLDetailBootomView.swift in Sources */,
@@ -773,6 +785,7 @@
 				0664BE381D6E9B920021B193 /* LLClasDetailCell.swift in Sources */,
 				06AA758E1D630EDD0048F3B6 /* LLDetailsController.swift in Sources */,
 				06FC4E2D1D62B83200451970 /* LLChliddrenCell.swift in Sources */,
+				069DDE931D87E09100C9122F /* LLSeachScrollView.m in Sources */,
 				06D1E4D51D5C1D7300CEBEED /* LLBaseNavController.swift in Sources */,
 				06102AAA1D5DB87800D2BBF2 /* UIView+Extension.swift in Sources */,
 				06DB0C001D65BC6700F7ABB2 /* LLDeatilItemController.swift in Sources */,
@@ -878,6 +891,7 @@
 				GCC_WARN_UNUSED_VARIABLE = YES;
 				IPHONEOS_DEPLOYMENT_TARGET = 9.3;
 				MTL_ENABLE_DEBUG_INFO = YES;
+				NEW_SETTING = 2.3;
 				ONLY_ACTIVE_ARCH = YES;
 				SDKROOT = iphoneos;
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
@@ -917,6 +931,7 @@
 				GCC_WARN_UNUSED_VARIABLE = YES;
 				IPHONEOS_DEPLOYMENT_TARGET = 9.3;
 				MTL_ENABLE_DEBUG_INFO = NO;
+				NEW_SETTING = 2.3;
 				SDKROOT = iphoneos;
 				VALIDATE_PRODUCT = YES;
 			};
@@ -929,6 +944,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = "Brand Assets";
 				CLANG_ENABLE_MODULES = YES;
+				DEVELOPMENT_TEAM = N9EV8487M2;
 				INFOPLIST_FILE = "单糖/Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
@@ -947,6 +963,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = "Brand Assets";
 				CLANG_ENABLE_MODULES = YES;
+				DEVELOPMENT_TEAM = N9EV8487M2;
 				INFOPLIST_FILE = "单糖/Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";

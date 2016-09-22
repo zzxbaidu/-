@@ -7,7 +7,7 @@
 //
 
 import XCTest
-@testable import __
+//@testable import __
 
 class __Tests: XCTestCase {
     

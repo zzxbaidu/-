@@ -1,12 +1,12 @@
 PODS:
-  - Alamofire (3.4.1)
-  - IQKeyboardManager (4.0.4)
+  - Alamofire (3.5.0)
+  - IQKeyboardManager (4.0.5)
   - MJRefresh (3.1.12)
   - SDCycleScrollView (1.65):
     - SDWebImage (~> 3.7)
-  - SDWebImage (3.8.1):
-    - SDWebImage/Core (= 3.8.1)
-  - SDWebImage/Core (3.8.1)
+  - SDWebImage (3.8.2):
+    - SDWebImage/Core (= 3.8.2)
+  - SDWebImage/Core (3.8.2)
   - SnapKit (0.22.0)
   - SVProgressHUD (2.0.3)
 
@@ -20,11 +20,11 @@ DEPENDENCIES:
   - SVProgressHUD
 
 SPEC CHECKSUMS:
-  Alamofire: 01a82e2f6c0f860ade35534c8dd88be61bdef40c
-  IQKeyboardManager: 4a6f83b540283c2645aaeba2bd8dc0f09b5c77f8
+  Alamofire: b70a7352335f8ea5babd0a923eb7e8eacc67b877
+  IQKeyboardManager: 50b62c0603308968256f8208886e206c1dcce607
   MJRefresh: b96cdb21c4aa75a7b07654311ab2f315c497e806
   SDCycleScrollView: f72904c77698a7f93a41bcbbc2d78b073bf7326c
-  SDWebImage: 35f9627a3e44b4f292a8a8ce6a531fa488239b91
+  SDWebImage: 098e97e6176540799c27e804c96653ee0833d13c
   SnapKit: 0dd2fd157330f1ea11fd84da13e6be8a7a22bae0
   SVProgressHUD: b0830714205bea1317ea1a2ebc71e5633af334d4
 

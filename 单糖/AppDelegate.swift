@@ -20,6 +20,8 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         
         //键盘管理器
         
+        
+        
         let manager = IQKeyboardManager.sharedManager()
         
         manager.enable = true

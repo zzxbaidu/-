@@ -61,7 +61,7 @@ extension LLPhotoShowView: UIWebViewDelegate {
         UIApplication.sharedApplication().networkActivityIndicatorVisible = false
     }
     
-    func webView(webView: UIWebView, didFailLoadWithError error: NSError?) {
+    func webView(webView: UIWebView, didFailLoadWithError error: NSError) {
          SVProgressHUD.showErrorWithStatus("加载失败....")
     }
     
